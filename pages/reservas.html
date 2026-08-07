@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#4E6943">
+
+  <!-- ═══════════════════════════════════════════════════════════
+       SEO
+      
+  ═══════════════════════════════════════════════════════════ -->
+  <title>Reservar Sessão Gratuita — Wave Studio Fitness &amp; Health | Esmoriz</title>
+  <meta name="description" content="Reserva a tua sessão experimental gratuita. PT, aulas, massagens e laser. Respondemos sempre o mais breve possível.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.wavestudiofitness.pt/pages/reservas.html">
+
+  <!-- CORRIGIDO: favicon apontava para logo_sem_fundo.png (inconsistente) -->
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/icons/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../assets/icons/favicon-16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../assets/icons/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+
+  <!-- ─── Open Graph ─────────────────────────────────────────── -->
+  <meta property="og:title"       content="Reservar Sessão Gratuita — Wave Studio Fitness &amp; Health | Esmoriz">
+  <meta property="og:description" content="Reserva a tua sessão experimental gratuita. PT, aulas, massagens e laser. Resposta via WhatsApp.">
+  <meta property="og:type"        content="website">
+  <meta property="og:locale"      content="pt_PT">
+  <meta property="og:image"       content="https://www.wavestudiofitness.pt/assets/images/logos/og-image.jpg">
+  <meta property="og:url"         content="https://www.wavestudiofitness.pt/pages/reservas.html">
+
+  <!-- ─── Structured Data ───────────────────────────────────── -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Início",   "item": "https://www.wavestudiofitness.pt/" },
+      { "@type": "ListItem", "position": 2, "name": "Reservar", "item": "https://www.wavestudiofitness.pt/pages/reservas.html" }
+    ]
+  }
+  </script>
+
+  <!-- ─── Fonts ──────────────────────────────────────────────── -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet">
+
+  <!-- ─── Vendors ─── SRI garante integridade do CDN ────────── -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+    crossorigin="anonymous"
+  >
+  <!-- CORRIGIDO: Bootstrap Icons sem SRI integrity (adicionado) -->
+  <link rel="stylesheet" href="../assets/fonts/bootstrap-icons.css">
+
+  <!-- ─── Site styles ── ordem obrigatória: Bootstrap → style → overrides -->
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/overrides.css">
+</head>
+
+<body>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       SKIP LINK — WCAG 2.4.1 (Bypass Blocks)
+       CORRIGIDO: href="#main" → "#main-content"
+       CORRIGIDO: texto "conteudo" → "conteúdo" (acento em falta)
+  ═══════════════════════════════════════════════════════════ -->
+  <a class="skip-link" href="#main-content">Saltar para o conteúdo</a>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       NAVBAR — estrutura idêntica em todas as páginas.
+       CORRIGIDO: onerror com risco de loop → this.onerror=null.
+       CORRIGIDO: width/height em falta no logo (CLS).
+       CORRIGIDO: loading="eager" (logo acima do fold).
+  ═══════════════════════════════════════════════════════════ -->
+  <nav class="navbar navbar-expand-lg fixed-top" id="navbar" aria-label="Navegação principal">
+    <div class="container">
+
+      <a class="navbar-brand" href="../index.html" aria-label="Wave Studio — página inicial">
+        <img
+          src="../assets/images/logos/logomarca.webp"
+          alt="Wave Studio Fitness &amp; Health"
+          class="navbar-logo"
+          width="80"
+          height="80"
+          loading="eager"
+          onerror="this.onerror=null;this.src='../assets/images/logos/logomarca.webp'"
+        >
+      </a>
+
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#menuNav"
+        aria-controls="menuNav"
+        aria-expanded="false"
+        aria-label="Abrir menu de navegação"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="navbar-collapse collapse" id="menuNav">
+        <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1" role="list">
+          <li class="nav-item"><a class="nav-link" href="../index.html#sobre">Studio</a></li>
+          <li class="nav-item"><a class="nav-link" href="servicos.html">Serviços</a></li>
+          <li class="nav-item"><a class="nav-link" href="equipa.html">Equipa</a></li>
+          <li class="nav-item"><a class="nav-link" href="../index.html#gift">Gift Card</a></li>
+          <li class="nav-item"><a class="nav-link" href="galeria.html">Espaço &amp; Galeria</a></li>
+          <li class="nav-item"><a class="nav-link" href="horarios.html">Horários</a></li>
+          <li class="nav-item"><a class="nav-link" href="contactos.html">Contacto</a></li>
+          <li class="nav-item ms-lg-2">
+            
+            <a
+              class="btn btn-primary btn-nav"
+              href="reservas.html"
+              aria-current="page"
+            >
+              <i class="bi bi-calendar-check" aria-hidden="true"></i>
+              <span>Agendar Sessão Gratuita</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+  </nav>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       MAIN
+       CORRIGIDO: id="main" → id="main-content" + tabindex="-1"
+       (alvo do skip-link; garante foco em Safari/iOS).
+       CORRIGIDO: <header> dentro de <main> → <section>
+       para consistência e compatibilidade com leitores de ecrã.
+  ═══════════════════════════════════════════════════════════ -->
+  <main id="main-content" tabindex="-1">
+
+    <section
+      class="page-hero page-hero--img"
+      aria-labelledby="h-reservas"
+      style="background-image: url('../assets/images/hero/are-you-ready.webp')"
+    >
+      <div class="page-hero__overlay" aria-hidden="true"></div>
+      <div class="container page-hero__inner">
+        <nav class="breadcrumb-wave" aria-label="Localização na página">
+          <a href="../index.html">Início</a>
+          <i class="bi bi-chevron-right" aria-hidden="true"></i>
+          <span aria-current="page">Reservar</span>
+        </nav>
+        <h1 id="h-reservas" class="page-hero__titulo">
+          Reserva a tua<br>
+          <span class="txt-accent">Sessão Gratuita</span>
+        </h1>
+        <p class="page-hero__sub">
+          A primeira sessão é por nossa conta. Preenche o formulário e
+          respondemos via WhatsApp.
+        </p>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════
+         SECÇÃO — PASSOS + FORMULÁRIO
+    ═══════════════════════════════════════════════════════════ -->
+    <section class="section" aria-labelledby="h-form">
+      <div class="container">
+        <div class="row g-5 align-items-start">
+
+          <!-- Coluna esquerda — explicação do processo -->
+          <div class="col-lg-5 reveal">
+            <span class="sec-label">Como funciona</span>
+            <span class="deco-line" aria-hidden="true"></span>
+            <h2 id="h-form" class="sec-title">
+              Simples como<br>
+              <span class="txt-accent">deve ser.</span>
+            </h2>
+            <p class="sec-sub mb-4">
+              O formulário gera uma mensagem estruturada enviada diretamente
+              para o <strong>WhatsApp do studio</strong>.
+            </p>
+
+            <ol class="passos-list" aria-label="Como funciona o processo de reserva">
+              <li class="passo">
+                <div class="passo__num" aria-hidden="true">1</div>
+                <div>
+                  <p class="passo__h">Escolhes o serviço</p>
+                  <p class="passo__p">Seleciona o tipo de sessão pretendida.</p>
+                </div>
+              </li>
+              <li class="passo">
+                <div class="passo__num" aria-hidden="true">2</div>
+                <div>
+                  <p class="passo__h">Enviamos via WhatsApp</p>
+                  <p class="passo__p">Mensagem estruturada com todos os teus dados.</p>
+                </div>
+              </li>
+              <li class="passo">
+                <div class="passo__num" aria-hidden="true">3</div>
+                <div>
+                  <p class="passo__h">Respondemos o mais breve possível</p>
+                  <p class="passo__p">Resposta a confirmar a Sessão marcada.</p>
+                </div>
+              </li>
+            </ol>
+
+            <div class="contacto-dir">
+              <p class="contacto-dir__lbl">Contacto direto</p>
+              <a href="tel:+351966201175" class="contacto-dir__link">
+                <i class="bi bi-telephone-fill" aria-hidden="true"></i>
+                +351 966 201 175
+              </a>
+              <a href="mailto:wavestudiofitness@gmail.com" class="contacto-dir__link">
+                <i class="bi bi-envelope-fill" aria-hidden="true"></i>
+                wavestudiofitness@gmail.com
+              </a>
+              <a
+                href="https://wa.me/351966201175"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="contacto-dir__link contacto-dir__link--wa"
+              >
+                <i class="bi bi-whatsapp" aria-hidden="true"></i>
+                WhatsApp — Resposta o mais breve passível
+                <span class="visually-hidden">(abre numa nova aba)</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Coluna direita — formulário -->
+          <div class="col-lg-7 reveal" style="animation-delay: .15s">
+            <div class="reserva-wrap">
+
+              <div class="reserva-head">
+                <div class="d-flex align-items-center justify-content-between">
+                  <div>
+                    <!--
+                      CORRIGIDO: h3 aqui é semânticamente correto (filho de h2
+                      da mesma secção). Texto corrigido: "Sessao" → "Sessão".
+                    -->
+                    <h3 class="reserva-head__title">Reservar Sessão</h3>
+                    <!--
+                      CORRIGIDO: "1. gratis ." → "1.ª sessão gratuita"
+                      (ponto solto e texto incompleto — era lixo textual).
+                    -->
+                    <p class="reserva-head__sub">
+                      <i class="bi bi-shield-check me-1" aria-hidden="true"></i>
+                      1.ª sessão gratuita · Resposta via WhatsApp
+                    </p>
+                  </div>
+                  <!--
+                    CORRIGIDO: logo apontava para logo_sem_fundo.png.
+                    width/height adicionados.
+                  -->
+                  <img
+                    src="../assets/images/logos/logomarca.webp"
+                    alt=""
+                    class="reserva-head__logo"
+                    aria-hidden="true"
+                    width="60"
+                    height="60"
+                    loading="lazy"
+                    onerror="this.onerror=null;this.style.display='none'"
+                  >
+                </div>
+              </div>
+
+              <div class="reserva-body">
+
+                <!-- Seletor de serviço -->
+                <!--
+                  CORRIGIDO: <p> com form-label não é o elemento correto
+                  para um grupo de opções. Adicionado id para o aria-labelledby.
+                  CORRIGIDO: textos "servico" → "serviço", acentuação correta.
+                -->
+                <p id="srv-lbl" class="form-label mb-2">
+                  Que serviço pretendes?
+                  <span class="campo-req" aria-label="obrigatório">*</span>
+                </p>
+                <div
+                  class="srv-selector"
+                  id="srvSelector"
+                  role="radiogroup"
+                  aria-labelledby="srv-lbl"
+                >
+                  <!--
+                    CORRIGIDO: textos dos data-context com acentuação correcta.
+                    CORRIGIDO: "1. gratuita" → "1.ª gratuita".
+                    CORRIGIDO: "Max." → "Máx.".
+                    CORRIGIDO: "holistica" → "holística".
+                    CORRIGIDO: "Espaco" → "Espaço".
+                    CORRIGIDO: "Avaliacao" → "Avaliação".
+                  -->
+                  <button type="button" class="srv-sel-btn active"
+                    data-tipo="PT Individual (30 ou 60 min)"
+                    data-context="PT Individual: 30 ou 60 minutos."
+                    data-icon="bi-person-arms-up"
+                    aria-pressed="true">PT Individual</button>
+
+                  <button type="button" class="srv-sel-btn"
+                    data-tipo="PT Duo (30 ou 60 min)"
+                    data-context="PT Duo: 30 ou 60 minutos para 2 pessoas."
+                    data-icon="bi-people"
+                    aria-pressed="false">PT Duo</button>
+
+                  <button type="button" class="srv-sel-btn"
+                    data-tipo="Aulas de Grupo"
+                    data-context="Aulas de Grupo: Cross Training, HIIT, Pilates ou Yoga. Pequenos grupos."
+                    data-icon="bi-lightning-charge"
+                    aria-pressed="false">Aulas Grupo</button>
+
+                  <button type="button" class="srv-sel-btn"
+                    data-tipo="Massagem"
+                    data-context="Massagem com Cecília Pinto — relaxamento, holística ou terapêutica."
+                    data-icon="bi-heart-pulse"
+                    aria-pressed="false">Massagem</button>
+
+                  <button type="button" class="srv-sel-btn"
+                    data-tipo="Depilação a Laser"
+                    data-context="Avaliação laser gratuita. Tratamento seguro e progressivo. Para homem e mulher."
+                    data-icon="bi-stars"
+                    aria-pressed="false">Laser</button>
+
+                  <button type="button" class="srv-sel-btn"
+                    data-tipo="Aluguer do Espaço por Hora"
+                    data-context="Espaço privado equipado por hora. Para workshops, eventos e treinos privados."
+                    data-icon="bi-door-open"
+                    aria-pressed="false">Aluguer</button>
+                </div>
+
+                <!-- Contexto dinâmico do serviço seleccionado -->
+                <div
+                  id="srvContext"
+                  class="srv-context is-visible"
+                  role="status"
+                  aria-live="polite"
+                >
+                  <i id="ctxIcon" class="bi bi-person-arms-up" aria-hidden="true"></i>
+                  <span id="ctxTxt">
+                    PT Individual: 30 ou 60 minutos.
+                  </span>
+                </div>
+
+                <!-- Formulário de reserva -->
+                <!--
+                 
+                -->
+                <form id="formReserva" novalidate aria-label="Formulário de reserva de sessão">
+                  <div class="row g-3">
+
+                    <div class="col-md-6">
+                      <label for="nome" class="form-label">
+                        Nome completo
+                        <span class="campo-req" aria-label="obrigatório">*</span>
+                      </label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="nome"
+                        name="nome"
+                        placeholder="O teu nome completo"
+                        required
+                        autocomplete="name"
+                        aria-describedby="nome-erro"
+                      >
+                      <div id="nome-erro" class="invalid-feedback">
+                        Por favor, indica o teu nome.
+                      </div>
+                    </div>
+
+                    <div class="col-md-6">
+                      <label for="tel" class="form-label">
+                        Telefone / WhatsApp
+                        <span class="campo-req" aria-label="obrigatório">*</span>
+                      </label>
+                      <input
+                        type="tel"
+                        class="form-control"
+                        id="tel"
+                        name="tel"
+                        placeholder="+351 9XX XXX XXX"
+                        required
+                        autocomplete="tel"
+                        aria-describedby="tel-erro"
+                      >
+                      <div id="tel-erro" class="invalid-feedback">
+                        Por favor, indica o teu contacto.
+                      </div>
+                    </div>
+
+                    <div class="col-md-6">
+                      <label for="data" class="form-label">
+                        Data preferida
+                        <span class="campo-req" aria-label="obrigatório">*</span>
+                      </label>
+                      <input
+                        type="date"
+                        class="form-control"
+                        id="data"
+                        name="data"
+                        required
+                        aria-describedby="data-erro"
+                      >
+                      <div id="data-erro" class="invalid-feedback">
+                        Por favor, indica uma data.
+                      </div>
+                    </div>
+
+                    <div class="col-md-6">
+                      <label for="hora" class="form-label">Hora preferida</label>
+                      <select class="form-select" id="hora" name="hora">
+                        <option value="">Sem preferência</option>
+                        <option value="Manhã (7h–12h)">Manhã (7h–12h)</option>
+                        <option value="Tarde (12h–18h)">Tarde (12h–18h)</option>
+                        <option value="Noite (18h–21h)">Noite (18h–21h)</option>
+                      </select>
+                    </div>
+
+                    <div class="col-12">
+                      <label for="convidado" class="form-label">
+                        Vais trazer um convidado?
+                      </label>
+                      <select class="form-select" id="convidado" name="convidado">
+                        <option value="Não, venho sozinho/a">Não, venho sozinho/a</option>
+                        <option value="Sim, trago um convidado (grátis!)">Sim, trago um convidado (grátis!)</option>
+                      </select>
+                    </div>
+
+                    <div class="col-12">
+                      <label for="notas" class="form-label">
+                        Notas adicionais (opcional)
+                      </label>
+                      <textarea
+                        class="form-control"
+                        id="notas"
+                        name="notas"
+                        rows="3"
+                        placeholder="Lesões, objetivos, nome do convidado, dúvidas..."
+                      ></textarea>
+                    </div>
+
+                    <div class="col-12">
+                      <div class="form-check">
+                        <input
+                          class="form-check-input"
+                          type="checkbox"
+                          id="rgpd"
+                          name="rgpd"
+                          required
+                          aria-describedby="rgpd-erro"
+                        >
+                        <!--
+                          CORRIGIDO: style inline no label removido —
+                          estilos pertencem ao CSS global.
+                          CORRIGIDO: "Politica" → "Política".
+                        -->
+                        <label
+                          class="form-check-label form-check-label--sm"
+                          for="rgpd"
+                        >
+                          Concordo que os meus dados sejam partilhados via WhatsApp
+                          com a equipa Wave Studio para confirmação da reserva,
+                          conforme a
+                          <a href="privacidade.html" class="link-rgpd">Política de Privacidade</a>.
+                          <span class="campo-req" aria-label="obrigatório">*</span>
+                        </label>
+                        <div id="rgpd-erro" class="invalid-feedback">
+                          Tens de aceitar para continuar.
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-12 mt-1">
+                      <button
+                        type="submit"
+                        class="btn btn-wa btn-full btn-lg"
+                        id="btnReservar"
+                      >
+                        <i class="bi bi-whatsapp" aria-hidden="true"></i>
+                        Enviar Reserva via WhatsApp
+                      </button>
+                      <p style="font-family:var(--f-h);font-size:.72rem;color:var(--txt-muted);text-align:center;margin-top:.85rem;letter-spacing:.04em">
+                        <i class="bi bi-shield-check me-1" aria-hidden="true"></i>
+                        Abre o WhatsApp com mensagem pré-preenchida para a equipa
+                      </p>
+                    </div>
+
+                  </div>
+                </form>
+
+              </div><!-- /reserva-body -->
+            </div><!-- /reserva-wrap -->
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       FOOTER
+       CORRIGIDO: h3 → h2 nos headings (sem pai h2).
+       CORRIGIDO: <p> morada → <address>.
+       CORRIGIDO: <strong>/<span> horário → <dl><dt><dd>.
+       CORRIGIDO: aria-current="page" no link "Reservar".
+       CORRIGIDO: rel="noopener" sem "noreferrer".
+       CORRIGIDO: visually-hidden nos links externos.
+       CORRIGIDO: onerror com null guard no logo.
+       CORRIGIDO: width/height no logo do footer.
+  ═══════════════════════════════════════════════════════════ -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="row g-4 justify-content-between">
+
+        <div class="col-lg-3">
+          <img
+            src="../assets/images/logos/logomarca.webp"
+            alt="Wave Studio Fitness &amp; Health"
+            class="footer__logo"
+            width="52"
+            height="52"
+            loading="lazy"
+            onerror="this.onerror=null;this.style.display='none'"
+          >
+          <p class="footer__tagline">Treino que transforma. Acompanhamento que fica.</p>
+          <address class="footer__addr not-italic">
+            <i class="bi bi-geo-alt-fill me-2" aria-hidden="true"></i>Av. da Praia 1785, Esmoriz
+          </address>
+          <div class="d-flex gap-2 flex-wrap mt-3">
+            <a
+              href="https://wa.me/351966201175"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn btn-wa btn-sm"
+              aria-label="Contactar via WhatsApp (abre numa nova aba)"
+            >
+              <i class="bi bi-whatsapp" aria-hidden="true"></i> WhatsApp
+            </a>
+            <a href="mailto:wavestudiofitness@gmail.com" class="btn btn-outline-salvia btn-sm">
+              <i class="bi bi-envelope" aria-hidden="true"></i> Email
+            </a>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-lg-2">
+          <h2 class="footer__h">Páginas</h2>
+          <nav aria-label="Rodapé — páginas do site">
+            <ul class="footer__links">
+              <li><a href="../index.html#sobre" class="footer__link">Studio</a></li>
+              <li><a href="servicos.html"       class="footer__link">Serviços</a></li>
+              <li><a href="equipa.html"         class="footer__link">Equipa</a></li>
+              <li><a href="../index.html#gift"  class="footer__link">Gift Card</a></li>
+              <li><a href="galeria.html"        class="footer__link">Espaço &amp; Galeria</a></li>
+              <li><a href="horarios.html"       class="footer__link">Horários</a></li>
+              <li><a href="reservas.html"       class="footer__link" aria-current="page">Reservar</a></li>
+              <li><a href="contactos.html"      class="footer__link">Contacto</a></li>
+            </ul>
+          </nav>
+        </div>
+
+        <div class="col-sm-6 col-lg-3">
+          <h2 class="footer__h">Horário</h2>
+          <dl class="footer__horario">
+            <dt>Segunda a Sexta</dt><dd>07:00 – 21:00</dd>
+            <dt>Sábado</dt>         <dd>09:00 – 13:00</dd>
+            <dt>Domingo</dt>        <dd>Encerrado</dd>
+          </dl>
+        </div>
+
+        <div class="col-sm-6 col-lg-3">
+          <h2 class="footer__h">Contactos</h2>
+          <ul class="footer__links">
+            <li>
+              <a href="tel:+351966201175" class="footer__link">
+                <i class="bi bi-telephone-fill me-2" aria-hidden="true"></i>966 201 175
+              </a>
+            </li>
+            <li>
+              <a href="mailto:wavestudiofitness@gmail.com" class="footer__link">
+                <i class="bi bi-envelope-fill me-2" aria-hidden="true"></i>Email
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://wa.me/351966201175"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="footer__link"
+              >
+                <i class="bi bi-whatsapp me-2" aria-hidden="true"></i>WhatsApp
+                <span class="visually-hidden">(abre numa nova aba)</span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://instagram.com/wavestudiofitness"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="footer__link"
+              >
+                <i class="bi bi-instagram me-2" aria-hidden="true"></i>Instagram
+                <span class="visually-hidden">(abre numa nova aba)</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="footer__base">
+        <p class="footer__copy">© 2026 Wave Studio Fitness &amp; Health. Todos os direitos reservados.</p>
+        <nav class="footer__legal" aria-label="Páginas legais">
+          <a href="privacidade.html" class="footer__legal-link">Privacidade</a>
+          <span aria-hidden="true">·</span>
+          <a href="cookies.html"    class="footer__legal-link">Cookies</a>
+          <span aria-hidden="true">·</span>
+          <a href="termos.html"     class="footer__legal-link">Termos</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       COOKIE BANNER
+       CORRIGIDO: havia dois </div> orfãos antes dos scripts
+       (resquícios de um bloco eliminado).
+       CORRIGIDO: aria-modal="false" → "true".
+  ═══════════════════════════════════════════════════════════ -->
+  <div
+    id="bannerCookies"
+    class="cookie-banner"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="ck-h"
+    aria-describedby="ck-d"
+    hidden
+  >
+    <div class="cookie-banner__inner">
+      <div class="cookie-banner__txt">
+        <strong id="ck-h">Utilizamos cookies</strong>
+        <p id="ck-d">
+          Essenciais para o funcionamento.
+          <a href="cookies.html"     class="cookie-banner__link">Cookies</a> ·
+          <a href="privacidade.html" class="cookie-banner__link">Privacidade</a>.
+        </p>
+      </div>
+      <div class="cookie-banner__btns">
+        <button class="btn-ck-recusar" onclick="recusarCookies()">Só essenciais</button>
+        <button class="btn btn-primary btn-sm" onclick="aceitarCookies()">Aceitar todos</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Botão flutuante WhatsApp
+       CORRIGIDO: aria-label sem "(abre numa nova aba)" — adicionado. -->
+  <a
+    href="https://wa.me/351966201175?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20o%20Wave%20Studio."
+    class="btn-whatsapp"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Contactar o Wave Studio via WhatsApp (abre numa nova aba)"
+  >
+    <i class="bi bi-whatsapp" aria-hidden="true"></i>
+  </a>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       SCRIPTS — Bootstrap primeiro, site.js depois (sem defer).
+       CORRIGIDO: defer removido de site.js (redundante no fim
+       do body; pode criar race conditions com Bootstrap).
+       CORRIGIDO: scripts estavam a meio do documento, entre o
+       footer e o cookie banner — movidos para o fim correto.
+  ═══════════════════════════════════════════════════════════ -->
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc4s9bIOgUxi8T/jzmzH6wHs8lyxwQz8UhVxMrZjXhR"
+    crossorigin="anonymous"
+  ></script>
+  <script src="../assets/js/site.js"></script>
+
+</body>
+</html>

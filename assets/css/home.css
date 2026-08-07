@@ -1,0 +1,139 @@
+/* home.css — extraído do HTML para cumprir a regra do projeto:
+   todo o CSS deve viver em ficheiros externos, nunca inline. */
+
+/* ── Cards de vídeo Instagram ── */
+  .ig-video-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+  }
+  @media (max-width: 767px) {
+    .ig-video-grid { grid-template-columns: 1fr; max-width: 400px; margin-left: auto; margin-right: auto; }
+  }
+  @media (min-width: 768px) and (max-width: 991px) {
+    .ig-video-grid { grid-template-columns: repeat(3, 1fr); }
+  }
+
+  .ig-card {
+    position: relative;
+    border-radius: var(--r-xl);
+    overflow: hidden;
+    background: #111;
+    box-shadow: var(--sh-md);
+    aspect-ratio: 9 / 16;
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    transition: transform .3s, box-shadow .3s;
+  }
+  .ig-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 24px 60px rgba(0,0,0,.22);
+  }
+
+  /* Thumbnail com gradiente */
+  .ig-card__thumb {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center top;
+    transition: transform .5s ease;
+  }
+  .ig-card:hover .ig-card__thumb { transform: scale(1.05); }
+
+  /* Overlay escuro gradiente */
+  .ig-card__overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to bottom,
+      rgba(0,0,0,.05) 0%,
+      rgba(0,0,0,.10) 40%,
+      rgba(0,0,0,.75) 100%
+    );
+  }
+
+  /* Botão play central */
+  .ig-card__play {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1);
+    width: 62px; height: 62px;
+    background: rgba(255,255,255,.92);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    transition: transform .2s, background .2s;
+    box-shadow: 0 4px 20px rgba(0,0,0,.3);
+  }
+  .ig-card:hover .ig-card__play {
+    transform: translate(-50%, -50%) scale(1.12);
+    background: #fff;
+  }
+  .ig-card__play i {
+    font-size: 1.5rem;
+    color: var(--salvia-texto);
+    margin-left: 4px; /* optical centre */
+  }
+
+  /* Badge IG topo direito */
+  .ig-card__badge {
+    position: absolute;
+    top: 1rem; right: 1rem;
+    background: rgba(0,0,0,.55);
+    backdrop-filter: blur(6px);
+    color: #fff;
+    font-size: .65rem;
+    font-family: 'Cinzel', serif;
+    font-weight: 700;
+    letter-spacing: .07em;
+    border-radius: 2rem;
+    padding: .3rem .75rem;
+    display: flex; align-items: center; gap: .35rem;
+  }
+  .ig-card__badge i { font-size: .8rem; }
+
+  /* Info em baixo */
+  .ig-card__info {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    padding: 1.25rem 1.1rem 1.1rem;
+  }
+  .ig-card__tag {
+    font-family: 'Cinzel', serif;
+    font-size: .62rem;
+    font-weight: 700;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,.7);
+    margin-bottom: .3rem;
+    display: block;
+  }
+  .ig-card__titulo {
+    font-family: 'Cinzel', serif;
+    font-size: .92rem;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.3;
+    margin: 0 0 .5rem;
+  }
+  .ig-card__nome {
+    font-size: .75rem;
+    color: rgba(255,255,255,.75);
+    display: flex; align-items: center; gap: .4rem;
+  }
+  .ig-card__nome i { font-size: .8rem; color: rgba(255,255,255,.6); }
+
+  /* Card de testemunho — fundo diferente */
+  .ig-card--testemunho .ig-card__play i { color: #ca8a04; }
+  .ig-card--testemunho .ig-card__badge { background: rgba(202,138,4,.75); }
+
+  /* Rodapé IG */
+  .ig-footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }

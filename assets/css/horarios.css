@@ -1,0 +1,358 @@
+/* horarios.css — extraído do HTML para cumprir a regra do projeto:
+   todo o CSS deve viver em ficheiros externos, nunca inline. */
+
+/* ── Grelha semanal visual ── */
+    .semana-grid {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: .75rem;
+      margin-bottom: 2.5rem;
+    }
+    @media (max-width: 991px) { .semana-grid { grid-template-columns: repeat(3, 1fr); } }
+    @media (max-width: 575px) { .semana-grid { grid-template-columns: repeat(2, 1fr); } }
+
+    .dia-col {
+      background: var(--branco);
+      border: 1px solid var(--bege);
+      border-radius: var(--r-xl);
+      overflow: hidden;
+      box-shadow: var(--sh-sm);
+      transition: transform .2s, box-shadow .2s;
+    }
+    .dia-col:hover { transform: translateY(-3px); box-shadow: var(--sh-lg); }
+
+    .dia-col__header {
+      padding: .75rem 1rem;
+      text-align: center;
+      background: var(--creme);
+      border-bottom: 2px solid var(--bege);
+    }
+    .dia-col__abbr {
+      font-family: 'Cinzel', serif;
+      font-size: .65rem;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--txt-muted);
+      display: block;
+    }
+    .dia-col__nome {
+      font-family: 'Cinzel', serif;
+      font-size: .82rem;
+      font-weight: 700;
+      color: var(--txt-h);
+      margin: 0;
+    }
+
+    .dia-col__body { padding: .6rem .6rem; display: flex; flex-direction: column; gap: .4rem; }
+
+    /* ── Badge de aula (blocos coloridos) ── */
+    .aula-badge {
+      border-radius: var(--r);
+      padding: .55rem .75rem;
+      cursor: pointer;
+      transition: filter .2s, transform .15s;
+      border: none;
+      width: 100%;
+      text-align: left;
+      position: relative;
+    }
+    .aula-badge:hover { filter: brightness(.93); transform: scale(1.02); }
+    .aula-badge:focus-visible { outline: 2px solid var(--salvia); outline-offset: 2px; }
+
+    .aula-badge__hora {
+      font-family: 'Cinzel', serif;
+      font-size: .65rem;
+      font-weight: 700;
+      letter-spacing: .06em;
+      opacity: .85;
+      display: block;
+    }
+    .aula-badge__nome {
+      font-family: 'Cinzel', serif;
+      font-size: .78rem;
+      font-weight: 700;
+      display: block;
+      line-height: 1.2;
+      margin-top: .1rem;
+    }
+    .aula-badge__dur {
+      font-size: .65rem;
+      opacity: .75;
+      display: block;
+      margin-top: .1rem;
+    }
+
+    /* Cores por modalidade */
+    .mod-cross    { background: #4E6943; color: #fff; }
+    .mod-hiit     { background: #6b7280; color: #fff; }
+    .mod-pilates  { background: #7c9b8b; color: #fff; }
+    .mod-yoga     { background: #ca8a04; color: #fff; }
+    .mod-circuito { background: #c2410c; color: #fff; }
+    .mod-fullbody { background: #1e40af; color: #fff; }
+    .mod-pt       { background: var(--creme); color: var(--txt-muted); border: 1.5px dashed var(--bege); }
+
+    .aula-badge.mod-pt { cursor: default; }
+    .aula-badge.mod-pt:hover { filter: none; transform: none; }
+
+    /* Legenda */
+    .legenda { display: flex; flex-wrap: wrap; gap: .5rem; justify-content: center; margin-bottom: 2rem; }
+    .legenda-item {
+      display: flex; align-items: center; gap: .4rem;
+      font-family: 'Cinzel', serif; font-size: .68rem; font-weight: 600;
+      letter-spacing: .05em; text-transform: uppercase;
+    }
+    .legenda-dot { width: 12px; height: 12px; border-radius: 3px; flex-shrink: 0; }
+
+    /* ── Horário de funcionamento — cards compactos ── */
+    .func-card {
+      background: var(--branco);
+      border: 1px solid var(--bege);
+      border-radius: var(--r-xl);
+      padding: 1.25rem 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+      box-shadow: var(--sh-sm);
+    }
+    .func-icon {
+      width: 48px; height: 48px;
+      border-radius: var(--r-lg);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .func-icon i { font-size: 1.4rem; }
+    .func-card__dia { font-family: 'Cinzel', serif; font-size: .82rem; font-weight: 700; color: var(--txt-h); margin: 0 0 .2rem; }
+    .func-card__hora { font-size: .9rem; font-weight: 600; color: var(--salvia-texto); margin: 0; }
+    .func-card__obs  { font-size: .78rem; color: var(--txt-muted); margin: 0; }
+
+    /* ── Modal de reserva ── */
+    #modalReserva .modal-header {
+      background: var(--salvia, #4E6943); color: #fff;
+      border-radius: .5rem .5rem 0 0;
+    }
+    #modalReserva .modal-title { font-family: 'Cinzel', serif; font-size: 1rem; }
+    #modalReserva label { font-size: .9rem; color: #444; font-weight: 500; }
+    #modalReserva .form-control:focus {
+      border-color: var(--salvia, #4E6943);
+      box-shadow: 0 0 0 .2rem rgba(78,105,67,.2);
+    }
+    #modalReserva .btn-confirmar {
+      background: var(--salvia, #4E6943); color: #fff;
+      font-family: 'Cinzel', serif; font-size: .82rem; letter-spacing: .05em;
+      border: none; border-radius: 2rem; padding: .55rem 1.5rem;
+    }
+    #modalReserva .btn-confirmar:hover { background: #3a5c30; }
+    .modal-aula-resumo {
+      background: var(--creme); border-radius: var(--r);
+      padding: .85rem 1.1rem; margin-bottom: 1.25rem;
+      font-family: 'Cinzel', serif; font-size: .88rem;
+      font-weight: 700; color: var(--salvia-texto);
+      display: flex; align-items: center; gap: .6rem;
+    }
+    #alerta-cheio {
+      display: none;
+      background: #fff3cd; border: 1px solid #ffc107;
+      border-radius: var(--r); padding: 1rem; margin-top: 1rem; font-size: .88rem;
+    }
+
+    /* ── Vagas badge inline ── */
+    .vagas-pill {
+      font-size: .6rem; font-weight: 700; border-radius: 50px;
+      padding: .15rem .55rem; white-space: nowrap; margin-top: .25rem; display: inline-block;
+    }
+    .vagas-livre { background: rgba(255,255,255,.25); color: #fff; }
+    .vagas-cheio { background: #fee2e2; color: #991b1b; }
+
+/* ── Calendário laser ── */
+          .laser-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+            margin-bottom: 2rem;
+          }
+          @media (max-width: 767px) { .laser-grid { grid-template-columns: repeat(3, 1fr); } }
+          @media (max-width: 479px) { .laser-grid { grid-template-columns: repeat(2, 1fr); } }
+
+          .laser-mes {
+            position: relative;
+            background: var(--branco);
+            border: 1.5px solid var(--bege);
+            border-radius: var(--r-xl);
+            padding: 1.25rem 1rem 1rem;
+            text-align: center;
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: .35rem;
+            box-shadow: var(--sh-sm);
+            transition: transform .2s, box-shadow .2s, border-color .2s;
+            cursor: pointer;
+          }
+          .laser-mes:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--sh-lg);
+            border-color: var(--salvia);
+          }
+          .laser-mes__nome {
+            font-family: 'Cinzel', serif;
+            font-size: .78rem;
+            font-weight: 700;
+            letter-spacing: .08em;
+            text-transform: uppercase;
+            color: var(--txt-h);
+          }
+          .laser-mes__vagas {
+            font-size: 2rem;
+            font-weight: 800;
+            font-family: 'Cinzel', serif;
+            line-height: 1;
+          }
+          .laser-mes__label {
+            font-size: .65rem;
+            color: var(--txt-muted);
+            letter-spacing: .06em;
+            text-transform: uppercase;
+          }
+          .laser-mes__badge {
+            position: absolute;
+            top: -.55rem;
+            right: -.55rem;
+            background: var(--salvia);
+            color: #fff;
+            font-size: .6rem;
+            font-weight: 700;
+            font-family: 'Cinzel', serif;
+            letter-spacing: .06em;
+            border-radius: 2rem;
+            padding: .2rem .6rem;
+            white-space: nowrap;
+          }
+
+          /* Cores por disponibilidade */
+          .laser-mes--baixa  { border-color: #fca5a5; }
+          .laser-mes--baixa  .laser-mes__vagas { color: #dc2626; }
+          .laser-mes--media  { border-color: #fcd34d; }
+          .laser-mes--media  .laser-mes__vagas { color: #d97706; }
+          .laser-mes--alta   { border-color: #86efac; }
+          .laser-mes--alta   .laser-mes__vagas { color: #16a34a; }
+
+          .laser-info {
+            background: var(--creme);
+            border: 1px solid var(--bege);
+            border-radius: var(--r-xl);
+            padding: 1.5rem 2rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            align-items: center;
+            justify-content: center;
+          }
+          .laser-info__item {
+            display: flex;
+            align-items: center;
+            gap: .5rem;
+            font-size: .82rem;
+            color: var(--txt-muted);
+            font-family: 'Cinzel', serif;
+            font-weight: 600;
+            letter-spacing: .05em;
+          }
+          .laser-dot {
+            width: 12px; height: 12px;
+            border-radius: 3px; flex-shrink: 0;
+          }
+
+/* ── Grelha de massagens por mês ── */
+          .mes-bloco { margin-bottom: 2.5rem; }
+
+          .mes-titulo {
+            display: flex; align-items: center; gap: 1rem;
+            margin-bottom: 1rem;
+          }
+          .mes-titulo::before, .mes-titulo::after {
+            content: ''; flex: 1; height: 1px;
+            background: rgba(78,105,67,.2);
+          }
+          .mes-titulo__label {
+            font-family: 'Cinzel', serif; font-size: .72rem; font-weight: 700;
+            letter-spacing: .15em; text-transform: uppercase;
+            color: var(--salvia-texto); white-space: nowrap;
+            padding: .3rem 1.1rem; border: 1.5px solid rgba(78,105,67,.3);
+            border-radius: 2rem; background: var(--branco);
+          }
+
+          /* Scroll horizontal no mobile */
+          .massagem-mes-grid {
+            display: flex;
+            gap: .5rem;
+            overflow-x: auto;
+            padding-bottom: .5rem;
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+          }
+          .massagem-mes-grid::-webkit-scrollbar { height: 4px; }
+          .massagem-mes-grid::-webkit-scrollbar-track { background: var(--bege); border-radius: 2px; }
+          .massagem-mes-grid::-webkit-scrollbar-thumb { background: var(--salvia); border-radius: 2px; }
+
+          /* Coluna por dia */
+          .massagem-col {
+            flex-shrink: 0;
+            width: 72px;
+            border-radius: var(--r-xl);
+            overflow: hidden;
+            background: var(--branco);
+            border: 1px solid var(--bege);
+            box-shadow: var(--sh-sm);
+            scroll-snap-align: start;
+          }
+
+          .massagem-col__header {
+            padding: .5rem .25rem;
+            text-align: center;
+            display: flex; flex-direction: column; align-items: center; gap: .1rem;
+          }
+          /* Reutiliza cores dos aula-badge */
+          .massagem-col__header.mod-pilates { background: #7c9b8b; }
+          .massagem-col__header.mod-fullbody { background: #1e40af; }
+          .massagem-col__header.mod-yoga    { background: #ca8a04; }
+          /* Cores próprias para colunas de massagem */
+          .massagem-col__header.massa-qua   { background: #6b8f71; }  /* verde-salva médio — Quarta */
+          .massagem-col__header.massa-qui   { background: #4a7c6f; }  /* verde-azulado — Quinta */
+          .massagem-col__header.massa-sex   { background: #4E6943; }  /* verde principal — Sexta */
+          .massagem-col__header.massa-sab   { background: #a47c5b; }  /* terracota quente — Sábado */
+
+          .massagem-col__abbr {
+            font-family: 'Cinzel', serif; font-size: .55rem; font-weight: 700;
+            letter-spacing: .08em; text-transform: uppercase; color: rgba(255,255,255,.8);
+          }
+          .massagem-col__dia {
+            font-family: 'Cinzel', serif; font-size: 1.1rem; font-weight: 700;
+            color: #fff; line-height: 1;
+          }
+
+          .massagem-col__slots {
+            padding: .4rem .35rem;
+            display: flex; flex-direction: column; gap: .3rem;
+          }
+
+          /* Badge de hora — igual ao aula-badge mas horizontal */
+          .massagem-h {
+            display: block;
+            font-family: 'Cinzel', serif; font-size: .62rem; font-weight: 700;
+            text-align: center; padding: .38rem .2rem;
+            border-radius: var(--r); background: var(--creme);
+            border: 1px solid var(--bege); color: var(--salvia-texto);
+            text-decoration: none; cursor: pointer;
+            transition: background .15s, transform .15s, border-color .15s;
+            white-space: nowrap;
+          }
+          .massagem-h:hover {
+            background: #edf2e9; border-color: var(--salvia);
+            transform: scale(1.05); color: var(--salvia-texto);
+          }
+          .massagem-h--ultimo {
+            background: #fefce8; border-color: #ca8a04; color: #92400e;
+          }
+          .massagem-h--ultimo:hover { background: #fef9c3; }

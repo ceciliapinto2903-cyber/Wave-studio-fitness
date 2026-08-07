@@ -1,0 +1,146 @@
+/* contactos.css — extraído do HTML para cumprir a regra do projeto:
+   todo o CSS deve viver em ficheiros externos, nunca inline. */
+
+/* ══════════════════════════════════════════════════════════
+     ARE YOU READY — Redesign completo
+     Paleta: --salvia #8FA882 · --salvia-texto #4E6943 · branco
+     
+     Layout em 2 metades:
+       ESQUERDA  → "Fala Connosco" (sempre visível, não interfere)
+       DIREITA   → animação "ARE YOU READY?" centrada na sua área
+     
+     Sequência temporal:
+       0.0s  "ARE"    entra de cima
+       0.45s "YOU"    entra de cima  
+       0.9s  "READY?" entra + brilho sálvia
+       2.8s  animação faz fade
+       3.0s  linha decorativa sálvia aparece na direita
+  ══════════════════════════════════════════════════════════ */
+
+  /* Hero container */
+  .ayr-hero {
+    min-height: 540px;
+    overflow:   hidden;
+  }
+
+  /* Overlay mais escuro e gradiente direccional
+     — esquerda escura para o texto, direita mais aberta para a animação */
+  .ayr-hero .page-hero__overlay {
+    background: linear-gradient(
+      105deg,
+      rgba(30, 24, 18, .88) 0%,
+      rgba(30, 24, 18, .72) 38%,
+      rgba(30, 24, 18, .40) 60%,
+      rgba(30, 24, 18, .20) 100%
+    );
+  }
+
+  /* ── Layout: conteúdo à esquerda + animação à direita ── */
+  .ayr-hero .page-hero__inner {
+    display:         flex;
+    align-items:     center;
+    justify-content: space-between;
+    gap:             2rem;
+    min-height:      inherit;
+    padding-top:     calc(var(--nav-h) + 3rem);
+    padding-bottom:  3rem;
+  }
+
+  /* Coluna esquerda — texto fixo */
+  .ayr-left {
+    flex:      0 0 auto;
+    max-width: 480px;
+    position:  relative;
+    z-index:   2;
+  }
+
+  /* Coluna direita — palco da animação */
+  .ayr-right {
+    flex:            1 1 auto;
+    display:         flex;
+    flex-direction:  column;
+    align-items:     center;
+    justify-content: center;
+    position:        relative;
+    min-height:      320px;
+    pointer-events:  none;
+  }
+
+  /* ── Palavras da animação ── */
+  .ayr-word {
+    display:        block;
+    font-family:    'Cinzel', serif;
+    font-size:      clamp(2.8rem, 7vw, 6.5rem);
+    font-weight:    700;
+    letter-spacing: .18em;
+    line-height:    1;
+    opacity:        0;
+    transform:      translateY(-28px);
+    animation:      ayr-drop .55s cubic-bezier(.22,1,.36,1) forwards;
+    /* Cor principal: sálvia claro (#8FA882) — paleta da marca */
+    color:          #8FA882;
+    text-shadow:
+      0 2px 8px  rgba(0,0,0,.35),
+      0 0  40px  rgba(143,168,130,.15);
+  }
+
+  /* "READY?" — versão bold com cor de destaque */
+  .ayr-word--accent {
+    font-size:   clamp(2.4rem, 6vw, 5.8rem);
+    color:       transparent;
+    /* Contorno na cor sálvia escura (#4E6943) */
+    -webkit-text-stroke: 2px #8FA882;
+    text-shadow: none;
+    animation:
+      ayr-drop  .6s cubic-bezier(.22,1,.36,1) .9s forwards,
+      ayr-glow  1.2s ease-in-out              1.6s 1;
+  }
+
+  /* Linha decorativa sálvia abaixo do READY? */
+  .ayr-right::after {
+    content:       '';
+    display:       block;
+    width:         0;
+    height:        2px;
+    background:    linear-gradient(90deg, transparent, #8FA882, transparent);
+    border-radius: 2px;
+    margin-top:    1.2rem;
+    animation:     ayr-line .6s ease 1.8s forwards;
+  }
+
+  /* Keyframes */
+  @keyframes ayr-drop {
+    0%   { opacity: 0; transform: translateY(-28px) scale(.95); }
+    100% { opacity: 1; transform: translateY(0)     scale(1);   }
+  }
+
+  @keyframes ayr-glow {
+    0%,100% { -webkit-text-stroke-color: #8FA882; filter: none; }
+    50%     { -webkit-text-stroke-color: #b5ceb0;
+              filter: drop-shadow(0 0 20px rgba(143,168,130,.6)); }
+  }
+
+  @keyframes ayr-line {
+    0%   { width: 0;    opacity: 0; }
+    100% { width: 140px; opacity: 1; }
+  }
+
+  /* Mobile — stack vertical, animação por baixo do texto */
+  @media (max-width: 767px) {
+    .ayr-hero .page-hero__inner {
+      flex-direction: column;
+      align-items:    flex-start;
+      gap:            1.5rem;
+      padding-top:    calc(var(--nav-h) + 2rem);
+    }
+    .ayr-left  { max-width: 100%; }
+    .ayr-right { min-height: 180px; align-self: stretch; }
+    .ayr-word         { font-size: clamp(2rem, 11vw, 3.5rem); }
+    .ayr-word--accent { font-size: clamp(1.8rem, 10vw, 3rem); }
+  }
+
+  /* Sem animações — acessibilidade */
+  @media (prefers-reduced-motion: reduce) {
+    .ayr-word, .ayr-word--accent { animation: none; opacity: 1; transform: none; }
+    .ayr-right::after { animation: none; width: 120px; opacity: .6; }
+  }

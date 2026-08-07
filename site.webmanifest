@@ -1,0 +1,14 @@
+{
+  "name": "Wave Studio Fitness & Health",
+  "short_name": "Wave Studio",
+  "description": "Studio Fitness em Esmoriz, Aveiro — PT Individual e Duo, aulas de pequenos grupos, massagens e treino autónomo.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#4E6943",
+  "lang": "pt-PT",
+  "icons": [
+    { "src": "/assets/icons/android-chrome-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/assets/icons/android-chrome-512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}

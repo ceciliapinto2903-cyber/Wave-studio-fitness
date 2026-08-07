@@ -1,0 +1,32 @@
+/* galeria.css — extraído do HTML para cumprir a regra do projeto:
+   todo o CSS deve viver em ficheiros externos, nunca inline. */
+
+/* Filtros */
+    .galeria-filtros{display:flex;flex-wrap:wrap;gap:.5rem;justify-content:center;margin-bottom:2rem}
+    .galeria-filtro{font-family:'Cinzel',serif;font-size:.72rem;font-weight:600;letter-spacing:.07em;text-transform:uppercase;border:1.5px solid var(--salvia,#4E6943);color:var(--salvia,#4E6943);background:transparent;border-radius:2rem;padding:.4rem 1.1rem;cursor:pointer;transition:background .2s,color .2s}
+    .galeria-filtro:hover,.galeria-filtro.ativo{background:var(--salvia,#4E6943);color:#fff}
+    /* Grelha masonry */
+    .galeria-grid{columns:3;column-gap:1rem}
+    @media(max-width:768px){.galeria-grid{columns:2}}
+    @media(max-width:480px){.galeria-grid{columns:1}}
+    .galeria-item{break-inside:avoid;margin-bottom:1rem;position:relative;border-radius:var(--r-xl,1.25rem);overflow:hidden;cursor:pointer}
+    .galeria-item img{width:100%;display:block;transition:transform .5s ease}
+    .galeria-item:hover img{transform:scale(1.04)}
+    .galeria-item__overlay{position:absolute;inset:0;background:rgba(78,105,67,.45);display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity .3s;border-radius:inherit}
+    .galeria-item:hover .galeria-item__overlay{opacity:1}
+    .galeria-item__overlay i{font-size:2rem;color:#fff}
+    .galeria-item.oculto{display:none}
+    /* Feature cards */
+    .feat-card{background:var(--branco,#fff);border-radius:var(--r-xl,1.25rem);border:1px solid var(--bege,#e8ddd0);box-shadow:var(--sh-sm,0 4px 16px rgba(0,0,0,.06));padding:1.5rem;display:flex;gap:1.25rem;align-items:flex-start;height:100%}
+    .feat-icon{width:48px;height:48px;border-radius:var(--r-lg,.75rem);background:var(--salvia-light,#edf2e9);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+    .feat-icon i{font-size:1.4rem;color:var(--salvia-texto,#3a5c30)}
+    .feat-card h3{font-size:.95rem;margin-bottom:.3rem}
+    .feat-card p{font-size:.85rem;color:var(--txt-muted,#888);line-height:1.75;margin:0}
+    /* Tabs */
+    .page-tabs{display:flex;gap:0;border-bottom:2px solid rgba(78,105,67,.15);margin-bottom:3rem;overflow-x:auto}
+    .page-tab{font-family:'Cinzel',serif;font-size:.8rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--txt-muted,#888);background:none;border:none;padding:.9rem 1.75rem;cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-2px;white-space:nowrap;transition:color .2s,border-color .2s}
+    .page-tab:hover{color:var(--salvia,#4E6943)}
+    .page-tab.ativo{color:var(--salvia,#4E6943);border-bottom-color:var(--salvia,#4E6943)}
+    .tab-panel{display:none}
+    .tab-panel.ativo{display:block}
+    .sec-divider{border:none;border-top:1px solid rgba(78,105,67,.15);margin:0}

@@ -1,0 +1,174 @@
+/* servicos.css — extraído do HTML para cumprir a regra do projeto:
+   todo o CSS deve viver em ficheiros externos, nunca inline. */
+
+/* ── Secção de serviço ──────────────────────────────────── */
+    .servico-row {
+      padding:       5rem 0;
+      border-bottom: 1px solid rgba(78, 105, 67, .1);
+    }
+    .servico-row:last-of-type { border-bottom: none; }
+
+    .servico-row--creme { background-color: var(--creme); }
+
+    /* ── Imagem ─────────────────────────────────────────────── */
+    .servico-img-wrap {
+      position:      relative;
+      overflow:      hidden;
+      border-radius: var(--r-xl);
+      box-shadow:    var(--sh-lg);
+    }
+    .servico-img-wrap img {
+      width:      100%;
+      height:     480px;
+      object-fit: cover;
+      display:    block;
+      transition: transform .6s ease;
+    }
+    .servico-img-wrap:hover img { transform: scale(1.03); }
+
+    .servico-badge {
+      position:       absolute;
+      top:            1.25rem;
+      left:           1.25rem;
+      background:     var(--salvia-texto);
+      color:          #fff;
+      font-family:    var(--f-h);
+      font-size:      .72rem;
+      font-weight:    600;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      padding:        .45rem 1rem;
+      border-radius:  2rem;
+      z-index:        2;
+    }
+
+    /* ── Conteúdo textual ───────────────────────────────────── */
+    .servico-content {
+      display:         flex;
+      flex-direction:  column;
+      justify-content: center;
+      height:          100%;
+      padding:         1rem .5rem;
+    }
+
+    .servico-num {
+      font-family:   var(--f-h);
+      font-size:     4rem;
+      font-weight:   700;
+      color:         var(--salvia-texto);
+      opacity:       .1;
+      line-height:   1;
+      margin-bottom: -1.5rem;
+      display:       block;
+      pointer-events: none;
+      user-select:   none;
+    }
+
+    .servico-label {
+      font-family:    var(--f-h);
+      font-size:      .72rem;
+      font-weight:    600;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color:          var(--salvia-texto);
+      display:        flex;
+      align-items:    center;
+      gap:            .75rem;
+      margin-bottom:  .5rem;
+    }
+    .servico-label::after {
+      content:    '';
+      display:    block;
+      width:      3rem;
+      height:     1.5px;
+      background: var(--salvia-texto);
+      opacity:    .5;
+    }
+
+    .servico-title {
+      font-family:   var(--f-h);
+      font-size:     clamp(1.5rem, 3vw, 2rem);
+      font-weight:   600;
+      color:         var(--txt-h);
+      margin-bottom: 1rem;
+      line-height:   1.2;
+    }
+
+    .servico-desc {
+      font-family:   var(--f-body);
+      font-size:     1.15rem;
+      color:         var(--txt-muted);
+      line-height:   1.75;
+      margin-bottom: 1.5rem;
+    }
+
+    .servico-list { list-style: none; padding: 0; margin: 0 0 2rem; }
+    .servico-list li {
+      font-family: var(--f-body);
+      font-size:   1.05rem;
+      color:       var(--txt-muted);
+      padding:     .4rem 0;
+      display:     flex;
+      align-items: flex-start;
+      gap:         .6rem;
+    }
+    .servico-list li i {
+      color:       var(--salvia-texto);
+      font-size:   1rem;
+      margin-top:  .2rem;
+      flex-shrink: 0;
+    }
+
+    .servico-cta {
+      display:         inline-flex;
+      align-items:     center;
+      gap:             .5rem;
+      font-family:     var(--f-h);
+      font-size:       .82rem;
+      font-weight:     600;
+      letter-spacing:  .06em;
+      text-transform:  uppercase;
+      color:           var(--salvia-texto);
+      border:          1.5px solid var(--salvia-texto);
+      padding:         .75rem 1.75rem;
+      border-radius:   2rem;
+      text-decoration: none;
+      transition:      background var(--tr), color var(--tr), transform var(--tr);
+      align-self:      flex-start;
+    }
+    .servico-cta:hover         { background: var(--salvia-texto); color: #fff; transform: translateY(-2px); }
+    .servico-cta:focus-visible { outline: 3px solid var(--salvia-texto); outline-offset: 3px; }
+
+    /* ── PT Tabs — toggle Individual | Duo ─────────────────── */
+    .pt-tabs {
+      display:       flex;
+      gap:           .5rem;
+      margin-bottom: 1.5rem;
+    }
+    .pt-tab {
+      font-family:    var(--f-h);
+      font-size:      .72rem;
+      font-weight:    700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      padding:        .5rem 1.25rem;
+      border-radius:  2rem;
+      border:         1.5px solid var(--salvia-texto);
+      background:     transparent;
+      color:          var(--salvia-texto);
+      cursor:         pointer;
+      transition:     background var(--tr), color var(--tr);
+    }
+    .pt-tab.pt-tab--active,
+    .pt-tab:hover {
+      background: var(--salvia-texto);
+      color:      #fff;
+    }
+    .pt-panel                  { display: none; }
+    .pt-panel.pt-panel--active { display: block; }
+
+    /* ── Responsivo ─────────────────────────────────────────── */
+    @media (max-width: 991px) {
+      .servico-img-wrap img { height: 300px; }
+      .servico-content      { padding: 2rem 0 0; }
+    }
