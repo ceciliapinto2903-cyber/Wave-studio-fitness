@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.wavestudiofitness.pt/sitemap.xml
+Sitemap: https://wave-studio-fitness.com/sitemap.xml
