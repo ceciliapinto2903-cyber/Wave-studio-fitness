@@ -94,6 +94,7 @@
   outline:    3px solid #1da851;
   outline-offset: 3px;
 }
+.btn-wa--pill { border-radius: 2rem; }
 
 
 /* ────────────────────────────────────────────────────────────────
@@ -231,3 +232,196 @@
    ──────────────────────────────────────────────────────────────── */
 @media (min-width: 1200px) { .container { max-width: 1140px; } }
 @media (min-width: 1400px) { .container { max-width: 1200px; } }
+
+
+/* ────────────────────────────────────────────────────────────────
+   14. UTILITÁRIOS — Extraídos de estilos inline repetidos
+   Classes reutilizadas em várias páginas (Home, Equipa, Contactos,
+   Horários, Serviços). Consolidadas aqui em vez de repetir o mesmo
+   bloco de CSS dentro do HTML em cada ocorrência.
+   ──────────────────────────────────────────────────────────────── */
+
+/* Nota de confirmação via WhatsApp (ícone + texto verde pequeno) */
+.u-nota-whatsapp {
+  color:       #25D366;
+  font-size:   .85rem;
+  margin-top:  .2rem;
+}
+
+/* Texto pequeno esbatido — usado em tabelas e legendas centradas */
+.u-txt-nota {
+  font-size: .82rem;
+  color:     var(--txt-muted);
+}
+.u-txt-nota--85 {
+  font-size: .85rem;
+  color:     var(--txt-muted);
+}
+.u-txt-nota--88 {
+  font-size: .88rem;
+  color:     var(--txt-muted);
+}
+
+/* Cartão de membro de equipa — nome, cargo, biografia */
+.team-card__nome {
+  font-size:     1.15rem;
+  margin-bottom: .2rem;
+}
+.team-card__cargo {
+  font-family:     var(--f-h);
+  font-size:       .68rem;
+  font-weight:     700;
+  letter-spacing:  .14em;
+  text-transform:  uppercase;
+  color:           var(--salvia-texto);
+  display:         block;
+  margin-bottom:   .75rem;
+}
+.team-card__bio {
+  font-size:     .9rem;
+  color:         var(--txt-muted);
+  line-height:   1.75;
+  margin-bottom: 1rem;
+}
+
+/* Ícones circulares de destaque (Contactos, Serviços) */
+.u-icone-lg {
+  font-size:     2rem;
+  color:         var(--salvia-texto);
+  display:       block;
+  margin-bottom: .85rem;
+}
+.u-icone-xl {
+  font-size:     2.5rem;
+  color:         var(--salvia-texto);
+  display:       block;
+  margin-bottom: 1rem;
+}
+.u-icone-xl--whatsapp { color: #25D366; }
+
+/* Texto sálvia suave (subtítulos sobre fundo claro) */
+.u-cor-salvia-suave { color: rgba(143, 168, 130, .85); }
+
+/* Legenda centrada pequena (ex: nota sob tabela de horários) */
+.u-legenda-centro {
+  font-family:    var(--f-h);
+  font-size:      .72rem;
+  color:          var(--txt-muted);
+  text-align:     center;
+  margin-top:     .85rem;
+  letter-spacing: .04em;
+}
+
+/* Link discreto sem sublinhado, cor da marca */
+.u-link-salvia {
+  color:           var(--salvia-texto);
+  text-decoration: none;
+}
+.u-link-salvia--bold {
+  color:           var(--salvia-texto);
+  text-decoration: none;
+  font-weight:     600;
+}
+
+/* Caixa de informação (morada, horário — usada em Contactos) */
+.u-caixa-info {
+  background:    var(--creme);
+  border-radius: var(--r-lg);
+  padding:       1.25rem;
+  border:        1px solid var(--bege);
+}
+.u-caixa-info__titulo {
+  font-family:     var(--f-h);
+  font-size:       .82rem;
+  font-weight:     700;
+  letter-spacing:  .1em;
+  text-transform:  uppercase;
+  color:           var(--salvia-texto);
+  margin-bottom:   .75rem;
+}
+.u-caixa-info__texto {
+  font-family: var(--f-body);
+  font-size:   .88rem;
+  color:       var(--txt-muted);
+  margin:      0;
+  line-height: 1.9;
+}
+.u-caixa-info__endereco {
+  font-style:  normal;
+  font-family: var(--f-body);
+  font-size:   .88rem;
+  color:       var(--txt-muted);
+  line-height: 1.75;
+  margin:      0;
+}
+
+/* Grupo de botões centrado com espaçamento (rodapé de secções) */
+.u-flex-center-gap {
+  display:         flex;
+  justify-content: center;
+  gap:             1rem;
+}
+
+/* Citação / testemunho em itálico */
+.u-citacao { color: var(--txt-muted); font-style: italic; }
+
+/* Fundo verde-escuro da marca, uso pontual */
+.u-fundo-marca { background: #4E6943; }
+
+/* Campo obrigatório em formulários */
+.u-obrigatorio { color: #c00; }
+
+/* Mapa incorporado — moldura consistente com o resto do site */
+.u-mapa-frame {
+  border-radius: var(--r-xl);
+  overflow:      hidden;
+  box-shadow:    var(--sh-lg);
+  border:        1px solid var(--bege);
+  height:        420px;
+}
+
+/* Imagem de destaque com cantos arredondados e sombra da marca */
+.u-img-destaque {
+  width:         100%;
+  border-radius: var(--r-xl);
+  box-shadow:    var(--sh-lg);
+}
+
+/* Status "Encerrado" / "Horário reduzido" nos cartões de funcionamento */
+.u-status-nota { color: var(--txt-muted); font-style: italic; }
+
+/* Cartão de aula em lista de espera (PT sem horário fixo) */
+.u-aula-badge-vazio { text-align: center; padding: .85rem .5rem; }
+.u-aula-badge-vazio__icone { font-size: 1.2rem; opacity: .4; display: block; margin-bottom: .35rem; }
+.u-aula-badge-vazio__nota { font-size: .65rem; color: var(--txt-muted); display: block; margin-top: .2rem; }
+
+/* Aviso informativo em caixa (nota sobre marcações/alterações) */
+.u-aviso-info {
+  background:      var(--branco);
+  border:           1px solid var(--bege);
+  border-left:      3px solid var(--salvia);
+  border-radius:    var(--r-xl);
+  padding:          1rem 1.5rem;
+  font-size:        .82rem;
+  color:            var(--txt-muted);
+  display:          flex;
+  align-items:      flex-start;
+  gap:              .75rem;
+  margin-bottom:    2rem;
+}
+.u-aviso-info__icone {
+  color:      var(--salvia-texto);
+  font-size:  1rem;
+  margin-top: .1rem;
+}
+
+/* Botão inline pequeno para o Google Maps (link com ícone) */
+.u-link-maps {
+  font-family:     var(--f-h);
+  font-size:       .76rem;
+  color:           var(--salvia-texto);
+  text-decoration: none;
+  display:         inline-flex;
+  align-items:     center;
+  gap:             .35rem;
+}
