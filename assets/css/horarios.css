@@ -5,6 +5,7 @@
     .semana-grid {
       display: grid;
       grid-template-columns: repeat(6, 1fr);
+      align-items: start;
       gap: .75rem;
       margin-bottom: 2.5rem;
     }
@@ -89,7 +90,7 @@
     .mod-pilates  { background: #7c9b8b; color: #fff; }
     .mod-yoga     { background: #ca8a04; color: #fff; }
     .mod-circuito { background: #c2410c; color: #fff; }
-    .mod-fullbody { background: #1e40af; color: #fff; }
+    .mod-fullbody { background: #44637A; color: #fff; }
     .mod-pt       { background: var(--creme); color: var(--txt-muted); border: 1.5px dashed var(--bege); }
 
     .aula-badge.mod-pt { cursor: default; }
@@ -286,6 +287,7 @@
           /* Scroll horizontal no mobile */
           .massagem-mes-grid {
             display: flex;
+            align-items: flex-start;
             gap: .5rem;
             overflow-x: auto;
             padding-bottom: .5rem;
@@ -315,7 +317,7 @@
           }
           /* Reutiliza cores dos aula-badge */
           .massagem-col__header.mod-pilates { background: #7c9b8b; }
-          .massagem-col__header.mod-fullbody { background: #1e40af; }
+          .massagem-col__header.mod-fullbody { background: #44637A; }
           .massagem-col__header.mod-yoga    { background: #ca8a04; }
           /* Cores próprias para colunas de massagem */
           .massagem-col__header.massa-qua   { background: #6b8f71; }  /* verde-salva médio — Quarta */
@@ -356,3 +358,73 @@
             background: #fefce8; border-color: #ca8a04; color: #92400e;
           }
           .massagem-h--ultimo:hover { background: #fef9c3; }
+
+
+/* ── Nota de versão do horário ── */
+    .horario-versao {
+      font-family:    'Cinzel', serif;
+      font-size:      .7rem;
+      font-weight:    600;
+      letter-spacing: .08em;
+      color:          var(--salvia-texto);
+      background:     var(--salvia-light);
+      border:         1px solid rgba(var(--salvia-rgb), .35);
+      border-radius:  50px;
+      padding:        .3rem .95rem;
+      display:        inline-block;
+      margin:         .9rem 0 0;
+    }
+
+/* ── Dia sem aulas de grupo ── */
+    .dia-vazio {
+      display:        flex;
+      flex-direction: column;
+      align-items:    center;
+      gap:            .2rem;
+      text-align:     center;
+      min-height:     108px;
+      justify-content: center;
+    }
+    .dia-vazio__icone { font-size: 1.35rem; opacity: .55; margin-bottom: .15rem; }
+    .dia-vazio__nome {
+      font-family: 'Cinzel', serif;
+      font-size:   .72rem;
+      font-weight: 700;
+      letter-spacing: .04em;
+    }
+    .dia-vazio__nota { font-size: .68rem; line-height: 1.4; opacity: .8; }
+
+/* ── Massagens: aviso "por marcação" (calendário fixo temporariamente oculto) ── */
+    .por-marcacoes {
+      display: block;
+    }
+    .por-marcacoes__aviso {
+      max-width: 560px;
+      margin: 0 auto;
+      text-align: center;
+      background: var(--branco);
+      border: 1px solid var(--bege);
+      border-radius: var(--r-xl);
+      box-shadow: var(--sh-sm);
+      padding: 2.25rem 2rem;
+    }
+    .por-marcacoes__icone {
+      font-size: 1.8rem;
+      color: var(--salvia-texto);
+      display: block;
+      margin-bottom: .75rem;
+    }
+    .por-marcacoes__titulo {
+      font-family: 'Cinzel', serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--txt-h);
+      margin: 0 0 .5rem;
+    }
+    .por-marcacoes__texto {
+      font-size: .92rem;
+      color: var(--txt-muted);
+      line-height: 1.65;
+      margin: 0 0 1.25rem;
+    }
+    .por-marcacoes__cta { margin: 0 auto; }

@@ -1598,6 +1598,93 @@ h1, h2, h3, h4, h5, h6 {
 /* ────────────────────────────────────────────────────────────────
    18. EQUIPA — Cards de membros
    ──────────────────────────────────────────────────────────────── */
+/* Cartão — coluna flexível para que o botão fique alinhado em todos os cartões */
+.team-card {
+  display:        flex;
+  flex-direction: column;
+  align-items:    center;
+  padding:        2.25rem 1.5rem 1.75rem;
+}
+
+/* Retrato circular com anel duplo em sálvia */
+.team-card__foto {
+  width:         128px;
+  height:        128px;
+  border-radius: 50%;
+  overflow:      hidden;
+  margin:        0 auto 1.1rem;
+  background:    var(--salvia-light);
+  box-shadow:    0 0 0 4px var(--branco),
+                 0 0 0 6px rgba(var(--salvia-rgb), .45),
+                 0 10px 24px rgba(74, 64, 58, .14);
+  transition:    box-shadow var(--tr);
+}
+.team-card__foto img {
+  width: 100%; height: 100%;
+  object-fit: cover; object-position: top;
+  display: block;
+}
+/* Avatar provisório (iniciais) — enquadramento centrado */
+.team-card__foto img.is-placeholder { object-position: center; }
+/* Logótipos de parceiros: mostrar inteiros, não recortados como retrato */
+.team-card__foto--logo { background: var(--branco); }
+.team-card__foto--logo img { object-fit: contain; object-position: center; padding: .9rem; }
+.card-wave.team-card:hover .team-card__foto {
+  box-shadow: 0 0 0 4px var(--branco),
+              0 0 0 6px var(--salvia-texto),
+              0 14px 30px rgba(74, 64, 58, .2);
+}
+
+.team-card__nome {
+  font-family:    var(--f-h);
+  font-size:      1.2rem;
+  color:          var(--txt-h);
+  margin:         0 0 .7rem;
+}
+
+/* Áreas de intervenção como etiquetas legíveis, em vez de uma linha corrida */
+.team-card__tags {
+  list-style: none;
+  display:    flex;
+  flex-wrap:  wrap;
+  gap:        .35rem;
+  justify-content: center;
+  padding: 0;
+  margin:  0 0 1rem;
+}
+.team-card__tag {
+  font-family:    var(--f-h);
+  font-size:      .66rem;
+  font-weight:    600;
+  letter-spacing: .06em;
+  color:          var(--salvia-texto);
+  background:     var(--salvia-light);
+  border:         1px solid rgba(var(--salvia-rgb), .35);
+  border-radius:  50px;
+  padding:        .22rem .7rem;
+  white-space:    nowrap;
+}
+
+.team-card__bio {
+  font-size:     .95rem;
+  color:         var(--txt-muted);
+  line-height:   1.7;
+  margin-bottom: 1.5rem;
+  max-width:     34ch;
+}
+
+/* Empurra o botão para a base: todos os CTA ficam alinhados na mesma linha */
+.team-card__cta { margin-top: auto; }
+
+/* Separador entre os dois grupos da equipa */
+.equipa-grupo-sep { margin-top: 4.5rem; }
+
+@media (max-width: 767px) {
+  .team-card { padding: 2rem 1.25rem 1.5rem; }
+  .team-card__bio { max-width: none; }
+}
+
+/* Compatibilidade com marcação anterior */
 .equipa-avatar {
   width:         120px;
   height:        120px;

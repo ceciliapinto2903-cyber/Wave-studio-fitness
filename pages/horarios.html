@@ -149,7 +149,7 @@
               <div class="func-icon" style="background:#f3f4f6"><i class="bi bi-moon-stars" style="color:#6b7280"></i></div>
               <div>
                 <p class="func-card__dia">Domingo</p>
-                <p class="func-card__hora" class="u-status-nota">Encerrado</p>
+                <p class="func-card__hora u-status-nota">Encerrado</p>
                 <p class="func-card__obs">Descanso merecido</p>
               </div>
             </div>
@@ -159,7 +159,7 @@
               <div class="func-icon" style="background:#fff3cd"><i class="bi bi-calendar-x" style="color:#c2410c"></i></div>
               <div>
                 <p class="func-card__dia">Feriados</p>
-                <p class="func-card__hora" class="u-status-nota">Horário reduzido</p>
+                <p class="func-card__hora u-status-nota">Horário reduzido</p>
                 <p class="func-card__obs">Confirmar via WhatsApp</p>
               </div>
             </div>
@@ -187,6 +187,7 @@
           <span class="deco-line deco-line--center" aria-hidden="true"></span>
           <h2 id="h-aulas" class="sec-title">Horário <span class="txt-accent">Semanal</span></h2>
           <p class="sec-sub mx-auto">Aulas de pequenos grupos · 60 minutos · Reserva obrigatória com 24h de antecedência.</p>
+          <p class="horario-versao"><i class="bi bi-calendar3 me-1" aria-hidden="true"></i>Horário em vigor no mês de setembro de 2026</p>
         </div>
 
         <!-- Legenda de modalidades -->
@@ -196,7 +197,7 @@
           <div class="legenda-item" role="listitem"><span class="legenda-dot" style="background:#7c9b8b"></span>Pilates Mat</div>
           <div class="legenda-item" role="listitem"><span class="legenda-dot" style="background:#ca8a04"></span>Yoga</div>
           <div class="legenda-item" role="listitem"><span class="legenda-dot" style="background:#c2410c"></span>Circuito</div>
-          <div class="legenda-item" role="listitem"><span class="legenda-dot" style="background:#1e40af"></span>Mov Full Body</div>
+          <div class="legenda-item" role="listitem"><span class="legenda-dot" style="background:#44637A"></span>Mov Full Body</div>
         </div>
 
         <!-- Grelha visual semanal -->
@@ -269,6 +270,14 @@
                 <span class="aula-badge__dur">Cláudio · 60 min</span>
                 <span class="vagas-pill vagas-livre">Livre</span>
               </button>
+              <button class="aula-badge mod-pilates"
+                      onclick="abrirReserva('Quarta-feira','20:00','Pilates Mat')"
+                      aria-label="Reservar Pilates Mat Quarta-feira 20h00">
+                <span class="aula-badge__hora">20:00</span>
+                <span class="aula-badge__nome">Pilates Mat</span>
+                <span class="aula-badge__dur">Sofia · 60 min</span>
+                <span class="vagas-pill vagas-livre">Livre</span>
+              </button>
             </div>
           </div>
 
@@ -280,19 +289,11 @@
             </div>
             <div class="dia-col__body">
               <button class="aula-badge mod-pilates"
-                      onclick="abrirReserva('Quinta-feira','18:00','Pilates Mat')"
-                      aria-label="Reservar Pilates Mat Quinta-feira 18h00">
-                <span class="aula-badge__hora">18:00</span>
+                      onclick="abrirReserva('Quinta-feira','18:30','Pilates Mat')"
+                      aria-label="Reservar Pilates Mat Quinta-feira 18h30">
+                <span class="aula-badge__hora">18:30</span>
                 <span class="aula-badge__nome">Pilates Mat</span>
                 <span class="aula-badge__dur">Sofia · 60 min</span>
-                <span class="vagas-pill vagas-livre">Livre</span>
-              </button>
-              <button class="aula-badge mod-yoga"
-                      onclick="abrirReserva('Quinta-feira','20:00','Yoga')"
-                      aria-label="Reservar Yoga Quinta-feira 20h00">
-                <span class="aula-badge__hora">20:00</span>
-                <span class="aula-badge__nome">Yoga</span>
-                <span class="aula-badge__dur">Rita · 60 min</span>
                 <span class="vagas-pill vagas-livre">Livre</span>
               </button>
               <button class="aula-badge mod-fullbody"
@@ -301,7 +302,7 @@
                 <span class="aula-badge__hora">20:00</span>
                 <span class="aula-badge__nome">Mov Full Body</span>
                 <span class="aula-badge__dur">Cláudio · 60 min</span>
-                <span class="vagas-pill vagas-livre">Completa</span>
+                <span class="vagas-pill vagas-livre">Livre</span>
               </button>
             </div>
           </div>
@@ -312,12 +313,13 @@
               <span class="dia-col__abbr">6.ª feira</span>
               <h3 class="dia-col__nome">Sexta</h3>
             </div>
-            <!--<div class="dia-col__body">
-              <div class="aula-badge mod-pt" class="u-aula-badge-vazio">
-                <i class="bi bi-person-arms-up" class="u-aula-badge-vazio__icone"></i>
-                <span class="u-aula-badge-vazio__nota">Contactar para marcar</span>
+            <div class="dia-col__body">
+              <div class="aula-badge mod-pt dia-vazio">
+                <i class="bi bi-person-arms-up dia-vazio__icone" aria-hidden="true"></i>
+                <span class="dia-vazio__nome">Sem aulas de grupo</span>
+                <span class="dia-vazio__nota">Studio aberto 7h–21h · Treino livre e PT por marcação</span>
               </div>
-            </div>-->
+            </div>
           </div>
 
           <!-- SÁBADO -->
@@ -356,7 +358,7 @@
 
         </div><!-- /semana-grid -->
 
-        <p class="text-center" class="u-txt-nota--85">
+        <p class="text-center u-txt-nota--85">
           <i class="bi bi-info-circle me-1" aria-hidden="true"></i>
           Preenche o formulário e reserva via WhatsApp.
         </p>
@@ -393,7 +395,7 @@
               <div class="mt-2">
                 <a href="https://wa.me/351966201175?text=Ol%C3%A1!%20Quero%20entrar%20na%20lista%20de%20espera%20de%20uma%20aula."
                    target="_blank" rel="noopener"
-                   class="btn btn-sm" class="btn-wa btn-wa--pill">
+                   class="btn btn-sm btn-wa btn-wa--pill">
                   <i class="bi bi-whatsapp me-1"></i>Lista de espera
                 </a>
               </div>
@@ -461,7 +463,7 @@
           <span class="deco-line deco-line--center" aria-hidden="true"></span>
           <h2 id="h-laser" class="sec-title">Disponibilidade<br><span class="txt-accent">por Mês</span></h2>
           <p class="sec-sub mx-auto">
-            Técnico <strong></strong> · Certificado · Homem e mulher.<br>
+            Salutem Therapies Depil · Técnicos certificados · Homem e mulher.<br>
             Clica num mês para reservar directamente via WhatsApp.
           </p>
         </div>
@@ -476,8 +478,8 @@
              role="listitem" aria-label="Janeiro — 15 vagas disponíveis">
             <span class="laser-mes__nome">Janeiro</span>
             <span class="laser-mes__vagas">15</span>
-            <span class="laser-mes__label"></span>
-            <i class="bi bi-whatsapp" class="u-nota-whatsapp" aria-hidden="true"></i>
+            <span class="laser-mes__label">vagas</span>
+            <i class="bi bi-whatsapp u-nota-whatsapp" aria-hidden="true"></i>
           </a>
 
           <!-- Fevereiro: 12 vagas — média -->
@@ -487,8 +489,8 @@
              role="listitem" aria-label="Fevereiro — 12 vagas disponíveis">
             <span class="laser-mes__nome">Fevereiro</span>
             <span class="laser-mes__vagas">12</span>
-            <span class="laser-mes__label"></span>
-            <i class="bi bi-whatsapp" class="u-nota-whatsapp" aria-hidden="true"></i>
+            <span class="laser-mes__label">vagas</span>
+            <i class="bi bi-whatsapp u-nota-whatsapp" aria-hidden="true"></i>
           </a>
 
           <!-- Março: 12 vagas — média -->
@@ -498,8 +500,8 @@
              role="listitem" aria-label="Março — 12 vagas disponíveis">
             <span class="laser-mes__nome">Março</span>
             <span class="laser-mes__vagas">12</span>
-            <span class="laser-mes__label"></span>
-            <i class="bi bi-whatsapp" class="u-nota-whatsapp" aria-hidden="true"></i>
+            <span class="laser-mes__label">vagas</span>
+            <i class="bi bi-whatsapp u-nota-whatsapp" aria-hidden="true"></i>
           </a>
 
           <!-- Abril: 9 vagas — baixa -->
@@ -509,8 +511,8 @@
              role="listitem" aria-label="Abril — 9 vagas disponíveis">
             <span class="laser-mes__nome">Abril</span>
             <span class="laser-mes__vagas">9</span>
-            <span class="laser-mes__label"></span>
-            <i class="bi bi-whatsapp" class="u-nota-whatsapp" aria-hidden="true"></i>
+            <span class="laser-mes__label">vagas</span>
+            <i class="bi bi-whatsapp u-nota-whatsapp" aria-hidden="true"></i>
           </a>
 
           <!-- Maio: 14 vagas — alta -->
@@ -521,7 +523,7 @@
             <span class="laser-mes__nome">Maio</span>
             <span class="laser-mes__vagas">14</span>
             <span class="laser-mes__label">vagas</span>
-            <i class="bi bi-whatsapp" class="u-nota-whatsapp" aria-hidden="true"></i>
+            <i class="bi bi-whatsapp u-nota-whatsapp" aria-hidden="true"></i>
           </a>
 
           <!-- Junho: 18 vagas — alta -->
@@ -533,7 +535,7 @@
             <span class="laser-mes__nome">Junho</span>
             <span class="laser-mes__vagas">18</span>
             <span class="laser-mes__label">vagas</span>
-            <i class="bi bi-whatsapp" class="u-nota-whatsapp" aria-hidden="true"></i>
+            <i class="bi bi-whatsapp u-nota-whatsapp" aria-hidden="true"></i>
           </a>
 
           <!-- Julho: 16 vagas — alta -->
@@ -544,7 +546,7 @@
             <span class="laser-mes__nome">Julho</span>
             <span class="laser-mes__vagas">16</span>
             <span class="laser-mes__label">vagas</span>
-            <i class="bi bi-whatsapp" class="u-nota-whatsapp" aria-hidden="true"></i>
+            <i class="bi bi-whatsapp u-nota-whatsapp" aria-hidden="true"></i>
           </a>
 
           <!-- Agosto: 13 vagas — média -->
@@ -555,7 +557,7 @@
             <span class="laser-mes__nome">Agosto</span>
             <span class="laser-mes__vagas">13</span>
             <span class="laser-mes__label">vagas</span>
-            <i class="bi bi-whatsapp" class="u-nota-whatsapp" aria-hidden="true"></i>
+            <i class="bi bi-whatsapp u-nota-whatsapp" aria-hidden="true"></i>
           </a>
 
           <!-- Setembro: 10 vagas — baixa -->
@@ -567,7 +569,7 @@
             <span class="laser-mes__nome">Setembro</span>
             <span class="laser-mes__vagas">10</span>
             <span class="laser-mes__label">vagas</span>
-            <i class="bi bi-whatsapp" class="u-nota-whatsapp" aria-hidden="true"></i>
+            <i class="bi bi-whatsapp u-nota-whatsapp" aria-hidden="true"></i>
           </a>
 
           <!-- Outubro: 15 vagas — alta -->
@@ -578,7 +580,7 @@
             <span class="laser-mes__nome">Outubro</span>
             <span class="laser-mes__vagas">15</span>
             <span class="laser-mes__label">vagas</span>
-            <i class="bi bi-whatsapp" class="u-nota-whatsapp" aria-hidden="true"></i>
+            <i class="bi bi-whatsapp u-nota-whatsapp" aria-hidden="true"></i>
           </a>
 
           <!-- Novembro: 12 vagas — média -->
@@ -589,7 +591,7 @@
             <span class="laser-mes__nome">Novembro</span>
             <span class="laser-mes__vagas">12</span>
             <span class="laser-mes__label">vagas</span>
-            <i class="bi bi-whatsapp" class="u-nota-whatsapp" aria-hidden="true"></i>
+            <i class="bi bi-whatsapp u-nota-whatsapp" aria-hidden="true"></i>
           </a>
 
           <!-- Dezembro: 10 vagas — baixa -->
@@ -601,7 +603,7 @@
             <span class="laser-mes__nome">Dezembro</span>
             <span class="laser-mes__vagas">10</span>
             <span class="laser-mes__label">vagas</span>
-            <i class="bi bi-whatsapp" class="u-nota-whatsapp" aria-hidden="true"></i>
+            <i class="bi bi-whatsapp u-nota-whatsapp" aria-hidden="true"></i>
           </a>
 
         </div><!-- /laser-grid -->
@@ -622,7 +624,7 @@
           </div>
         </div>
 
-        <p class="text-center" class="u-txt-nota--85">
+        <p class="text-center u-txt-nota--85">
           <i class="bi bi-info-circle me-1" aria-hidden="true"></i>
           Vagas indicativas — sujeitas a alteração. Marcação confirmada apenas via WhatsApp.
           <!--Sessões com o técnico <strong>Ricardo</strong> -->· Para homem e mulher.
@@ -644,424 +646,248 @@
           <span class="deco-line deco-line--center" aria-hidden="true"></span>
           <h2 id="h-massagens" class="sec-title">Horário de<br><span class="txt-accent">Massagens</span></h2>
           <p class="sec-sub mx-auto">
-            <strong>Cecília Pinto</strong> · Terapeuta Certificada · Sessões de 60 min<br>
-            Quarta (18h–19h) · Quinta (18h–19h) · Sexta (18h–19h) · Sábado tarde (14h–18h)
+            <strong>Cecília Pinto</strong> · Terapeuta Certificada · Sessões de 60 min
+            <!-- Quarta (18h–19h) · Quinta (18h–19h) · Sexta (18h–19h) · Sábado tarde (14h–18h)
+                 Ocultado: pode cruzar-se com o horário de funcionamento do studio. Ver nota junto ao calendário comentado mais abaixo. -->
           </p>
         </div>
 
-        <!-- Legenda -->
+        <!-- Legenda de dias/horas — ocultada: cruzava-se com o horário do studio.
         <div class="legenda mb-4">
           <div class="legenda-item"><span class="legenda-dot" style="background:#6b8f71"></span>Quarta — 18:00 e 19:00</div>
           <div class="legenda-item"><span class="legenda-dot" style="background:#4a7c6f"></span>Quinta — 18:00 e 19:00</div>
           <div class="legenda-item"><span class="legenda-dot" style="background:#4E6943"></span>Sexta — 18:00 e 19:00</div>
           <div class="legenda-item"><span class="legenda-dot" style="background:#a47c5b"></span>Sábado — 14:00 às 18:00</div>
         </div>
+        -->
 
-        <!-- Nota informativa -->
+        <!-- Nota informativa — ocultada: repetia os horários fixos, já cobertos pelo aviso "por marcação" abaixo.
         <div class="u-aviso-info">
-          <i class="bi bi-info-circle-fill flex-shrink-0" class="u-aviso-info__icone" aria-hidden="true"></i>
+          <i class="bi bi-info-circle-fill flex-shrink-0 u-aviso-info__icone" aria-hidden="true"></i>
           <span>
-            Sessões de <strong>50 minutos</strong>, de Quarta a Sexta às 18h e 19h · Sábados de tarde das 14h às 18h.
+            Sessões de <strong>60 minutos</strong>, de Quarta a Sexta às 18h e 19h · Sábados de tarde das 14h às 18h.
             Marcação via WhatsApp — resposta imediata.
           </span>
         </div>
+        -->
 
-        <div class="mes-bloco reveal">
+        <!-- CALENDÁRIO DE MASSAGENS — Setembro 2026
+     Ocultado temporariamente: o studio está a trabalhar apenas por marcação directa.
+     Para reativar a grelha de horários fixos, remover este comentário e o aviso "por-marcacoes" abaixo.
+
+<div class="mes-bloco reveal">
           <div class="mes-titulo">
-            <span class="mes-titulo__label">Junho 2026</span>
+            <span class="mes-titulo__label">Setembro 2026</span>
           </div>
           <div class="massagem-mes-grid">
+            <div class="massagem-col" style="animation-delay:0.00s">
+              <div class="massagem-col__header massa-qua">
+                <span class="massagem-col__abbr">4.ª</span>
+                <span class="massagem-col__dia">2/Set</span>
+              </div>
+              <div class="massagem-col__slots">
+                <a class="massagem-h" href="https://wa.me/351966201175?text=Ol%C3%A1%21%20Quero%20marcar%20massagem%20no%20dia%202%20de%20Setembro%20%28Quarta-feira%29%20%C3%A0s%2018%3A00." target="_blank" rel="noopener noreferrer" aria-label="Marcar massagem Quarta-feira 2/Set 18:00">18:00</a>
+                <a class="massagem-h massagem-h--ultimo" href="https://wa.me/351966201175?text=Ol%C3%A1%21%20Quero%20marcar%20massagem%20no%20dia%202%20de%20Setembro%20%28Quarta-feira%29%20%C3%A0s%2019%3A00." target="_blank" rel="noopener noreferrer" aria-label="Marcar massagem Quarta-feira 2/Set 19:00">19:00</a>
+              </div>
+            </div>
+            <div class="massagem-col" style="animation-delay:0.07s">
+              <div class="massagem-col__header massa-qui">
+                <span class="massagem-col__abbr">5.ª</span>
+                <span class="massagem-col__dia">3/Set</span>
+              </div>
+              <div class="massagem-col__slots">
+                <a class="massagem-h" href="https://wa.me/351966201175?text=Ol%C3%A1%21%20Quero%20marcar%20massagem%20no%20dia%203%20de%20Setembro%20%28Quinta-feira%29%20%C3%A0s%2018%3A00." target="_blank" rel="noopener noreferrer" aria-label="Marcar massagem Quinta-feira 3/Set 18:00">18:00</a>
+                <a class="massagem-h massagem-h--ultimo" href="https://wa.me/351966201175?text=Ol%C3%A1%21%20Quero%20marcar%20massagem%20no%20dia%203%20de%20Setembro%20%28Quinta-feira%29%20%C3%A0s%2019%3A00." target="_blank" rel="noopener noreferrer" aria-label="Marcar massagem Quinta-feira 3/Set 19:00">19:00</a>
+              </div>
+            </div>
+            <div class="massagem-col" style="animation-delay:0.14s">
+              <div class="massagem-col__header massa-sex">
+                <span class="massagem-col__abbr">6.ª</span>
+                <span class="massagem-col__dia">4/Set</span>
+              </div>
+              <div class="massagem-col__slots">
+                <a class="massagem-h" href="https://wa.me/351966201175?text=Ol%C3%A1%21%20Quero%20marcar%20massagem%20no%20dia%204%20de%20Setembro%20%28Sexta-feira%29%20%C3%A0s%2018%3A00." target="_blank" rel="noopener noreferrer" aria-label="Marcar massagem Sexta-feira 4/Set 18:00">18:00</a>
+                <a class="massagem-h massagem-h--ultimo" href="https://wa.me/351966201175?text=Ol%C3%A1%21%20Quero%20marcar%20massagem%20no%20dia%204%20de%20Setembro%20%28Sexta-feira%29%20%C3%A0s%2019%3A00." target="_blank" rel="noopener noreferrer" aria-label="Marcar massagem Sexta-feira 4/Set 19:00">19:00</a>
+              </div>
+            </div>
+            <div class="massagem-col" style="animation-delay:0.21s">
+              <div class="massagem-col__header massa-sab">
+                <span class="massagem-col__abbr">Sáb</span>
+                <span class="massagem-col__dia">5/Set</span>
+              </div>
+              <div class="massagem-col__slots">
+                <a class="massagem-h" href="https://wa.me/351966201175?text=Ol%C3%A1%21%20Quero%20marcar%20massagem%20no%20dia%205%20de%20Setembro%20%28S%C3%A1bado%29%20%C3%A0s%2014%3A00." target="_blank" rel="noopener noreferrer" aria-label="Marcar massagem Sábado 5/Set 14:00">14:00</a>
+                <a class="massagem-h" href="https://wa.me/351966201175?text=Ol%C3%A1%21%20Quero%20marcar%20massagem%20no%20dia%205%20de%20Setembro%20%28S%C3%A1bado%29%20%C3%A0s%2015%3A00." target="_blank" rel="noopener noreferrer" aria-label="Marcar massagem Sábado 5/Set 15:00">15:00</a>
+                <a class="massagem-h" href="https://wa.me/351966201175?text=Ol%C3%A1%21%20Quero%20marcar%20massagem%20no%20dia%205%20de%20Setembro%20%28S%C3%A1bado%29%20%C3%A0s%2016%3A00." target="_blank" rel="noopener noreferrer" aria-label="Marcar massagem Sábado 5/Set 16:00">16:00</a>
+                <a class="massagem-h" href="https://wa.me/351966201175?text=Ol%C3%A1%21%20Quero%20marcar%20massagem%20no%20dia%205%20de%20Setembro%20%28S%C3%A1bado%29%20%C3%A0s%2017%3A00." target="_blank" rel="noopener noreferrer" aria-label="Marcar massagem Sábado 5/Set 17:00">17:00</a>
+                <a class="massagem-h massagem-h--ultimo" href="https://wa.me/351966201175?text=Ol%C3%A1%21%20Quero%20marcar%20massagem%20no%20dia%205%20de%20Setembro%20%28S%C3%A1bado%29%20%C3%A0s%2018%3A00." target="_blank" rel="noopener noreferrer" aria-label="Marcar massagem Sábado 5/Set 18:00">18:00</a>
+              </div>
+            </div>
+            <div class="massagem-col" style="animation-delay:0.00s">
+              <div class="massagem-col__header massa-qua">
+                <span class="massagem-col__abbr">4.ª</span>
+                <span class="massagem-col__dia">9/Set</span>
+              </div>
+              <div class="massagem-col__slots">
+                <a class="massagem-h" href="https://wa.me/351966201175?text=Ol%C3%A1%21%20Quero%20marcar%20massagem%20no%20dia%209%20de%20Setembro%20%28Quarta-feira%29%20%C3%A0s%2018%3A00." target="_blank" rel="noopener noreferrer" aria-label="Marcar massagem Quarta-feira 9/Set 18:00">18:00</a>
+                <a class="massagem-h massagem-h--ultimo" href="https://wa.me/351966201175?text=Ol%C3%A1%21%20Quero%20marcar%20massagem%20no%20dia%209%20de%20Setembro%20%28Quarta-feira%29%20%C3%A0s%2019%3A00." target="_blank" rel="noopener noreferrer" aria-label="Marcar massagem Quarta-feira 9/Set 19:00">19:00</a>
+              </div>
+            </div>
+            <div class="massagem-col" style="animation-delay:0.07s">
+              <div class="massagem-col__header massa-qui">
+                <span class="massagem-col__abbr">5.ª</span>
+                <span class="massagem-col__dia">10/Set</span>
+              </div>
+              <div class="massagem-col__slots">
+                <a class="massagem-h" href="https://wa.me/351966201175?text=Ol%C3%A1%21%20Quero%20marcar%20massagem%20no%20dia%2010%20de%20Setembro%20%28Quinta-feira%29%20%C3%A0s%2018%3A00." target="_blank" rel="noopener noreferrer" aria-label="Marcar massagem Quinta-feira 10/Set 18:00">18:00</a>
+                <a class="massagem-h massagem-h--ultimo" href="https://wa.me/351966201175?text=Ol%C3%A1%21%20Quero%20marcar%20massagem%20no%20dia%2010%20de%20Setembro%20%28Quinta-feira%29%20%C3%A0s%2019%3A00." target="_blank" rel="noopener noreferrer" aria-label="Marcar massagem Quinta-feira 10/Set 19:00">19:00</a>
+              </div>
+            </div>
+            <div class="massagem-col" style="animation-delay:0.14s">
+              <div class="massagem-col__header massa-sex">
+                <span class="massagem-col__abbr">6.ª</span>
+                <span class="massagem-col__dia">11/Set</span>
+              </div>
+              <div class="massagem-col__slots">
+                <a class="massagem-h" href="https://wa.me/351966201175?text=Ol%C3%A1%21%20Quero%20marcar%20massagem%20no%20dia%2011%20de%20Setembro%20%28Sexta-feira%29%20%C3%A0s%2018%3A00." target="_blank" rel="noopener noreferrer" aria-label="Marcar massagem Sexta-feira 11/Set 18:00">18:00</a>
+                <a class="massagem-h massagem-h--ultimo" href="https://wa.me/351966201175?text=Ol%C3%A1%21%20Quero%20marcar%20massagem%20no%20dia%2011%20de%20Setembro%20%28Sexta-feira%29%20%C3%A0s%2019%3A00." target="_blank" rel="noopener noreferrer" aria-label="Marcar massagem Sexta-feira 11/Set 19:00">19:00</a>
+              </div>
+            </div>
+            <div class="massagem-col" style="animation-delay:0.21s">
+              <div class="massagem-col__header massa-sab">
+                <span class="massagem-col__abbr">Sáb</span>
+                <span class="massagem-col__dia">12/Set</span>
+              </div>
+              <div class="massagem-col__slots">
+                <a class="massagem-h" href="https://wa.me/351966201175?text=Ol%C3%A1%21%20Quero%20marcar%20massagem%20no%20dia%2012%20de%20Setembro%20%28S%C3%A1bado%29%20%C3%A0s%2014%3A00." target="_blank" rel="noopener noreferrer" aria-label="Marcar massagem Sábado 12/Set 14:00">14:00</a>
+                <a class="massagem-h" href="https://wa.me/351966201175?text=Ol%C3%A1%21%20Quero%20marcar%20massagem%20no%20dia%2012%20de%20Setembro%20%28S%C3%A1bado%29%20%C3%A0s%2015%3A00." target="_blank" rel="noopener noreferrer" aria-label="Marcar massagem Sábado 12/Set 15:00">15:00</a>
+                <a class="massagem-h" href="https://wa.me/351966201175?text=Ol%C3%A1%21%20Quero%20marcar%20massagem%20no%20dia%2012%20de%20Setembro%20%28S%C3%A1bado%29%20%C3%A0s%2016%3A00." target="_blank" rel="noopener noreferrer" aria-label="Marcar massagem Sábado 12/Set 16:00">16:00</a>
+                <a class="massagem-h" href="https://wa.me/351966201175?text=Ol%C3%A1%21%20Quero%20marcar%20massagem%20no%20dia%2012%20de%20Setembro%20%28S%C3%A1bado%29%20%C3%A0s%2017%3A00." target="_blank" rel="noopener noreferrer" aria-label="Marcar massagem Sábado 12/Set 17:00">17:00</a>
+                <a class="massagem-h massagem-h--ultimo" href="https://wa.me/351966201175?text=Ol%C3%A1%21%20Quero%20marcar%20massagem%20no%20dia%2012%20de%20Setembro%20%28S%C3%A1bado%29%20%C3%A0s%2018%3A00." target="_blank" rel="noopener noreferrer" aria-label="Marcar massagem Sábado 12/Set 18:00">18:00</a>
+              </div>
+            </div>
+            <div class="massagem-col" style="animation-delay:0.00s">
+              <div class="massagem-col__header massa-qua">
+                <span class="massagem-col__abbr">4.ª</span>
+                <span class="massagem-col__dia">16/Set</span>
+              </div>
+              <div class="massagem-col__slots">
+                <a class="massagem-h" href="https://wa.me/351966201175?text=Ol%C3%A1%21%20Quero%20marcar%20massagem%20no%20dia%2016%20de%20Setembro%20%28Quarta-feira%29%20%C3%A0s%2018%3A00." target="_blank" rel="noopener noreferrer" aria-label="Marcar massagem Quarta-feira 16/Set 18:00">18:00</a>
+                <a class="massagem-h massagem-h--ultimo" href="https://wa.me/351966201175?text=Ol%C3%A1%21%20Quero%20marcar%20massagem%20no%20dia%2016%20de%20Setembro%20%28Quarta-feira%29%20%C3%A0s%2019%3A00." target="_blank" rel="noopener noreferrer" aria-label="Marcar massagem Quarta-feira 16/Set 19:00">19:00</a>
+              </div>
+            </div>
+            <div class="massagem-col" style="animation-delay:0.07s">
+              <div class="massagem-col__header massa-qui">
+                <span class="massagem-col__abbr">5.ª</span>
+                <span class="massagem-col__dia">17/Set</span>
+              </div>
+              <div class="massagem-col__slots">
+                <a class="massagem-h" href="https://wa.me/351966201175?text=Ol%C3%A1%21%20Quero%20marcar%20massagem%20no%20dia%2017%20de%20Setembro%20%28Quinta-feira%29%20%C3%A0s%2018%3A00." target="_blank" rel="noopener noreferrer" aria-label="Marcar massagem Quinta-feira 17/Set 18:00">18:00</a>
+                <a class="massagem-h massagem-h--ultimo" href="https://wa.me/351966201175?text=Ol%C3%A1%21%20Quero%20marcar%20massagem%20no%20dia%2017%20de%20Setembro%20%28Quinta-feira%29%20%C3%A0s%2019%3A00." target="_blank" rel="noopener noreferrer" aria-label="Marcar massagem Quinta-feira 17/Set 19:00">19:00</a>
+              </div>
+            </div>
+            <div class="massagem-col" style="animation-delay:0.14s">
+              <div class="massagem-col__header massa-sex">
+                <span class="massagem-col__abbr">6.ª</span>
+                <span class="massagem-col__dia">18/Set</span>
+              </div>
+              <div class="massagem-col__slots">
+                <a class="massagem-h" href="https://wa.me/351966201175?text=Ol%C3%A1%21%20Quero%20marcar%20massagem%20no%20dia%2018%20de%20Setembro%20%28Sexta-feira%29%20%C3%A0s%2018%3A00." target="_blank" rel="noopener noreferrer" aria-label="Marcar massagem Sexta-feira 18/Set 18:00">18:00</a>
+                <a class="massagem-h massagem-h--ultimo" href="https://wa.me/351966201175?text=Ol%C3%A1%21%20Quero%20marcar%20massagem%20no%20dia%2018%20de%20Setembro%20%28Sexta-feira%29%20%C3%A0s%2019%3A00." target="_blank" rel="noopener noreferrer" aria-label="Marcar massagem Sexta-feira 18/Set 19:00">19:00</a>
+              </div>
+            </div>
+            <div class="massagem-col" style="animation-delay:0.21s">
+              <div class="massagem-col__header massa-sab">
+                <span class="massagem-col__abbr">Sáb</span>
+                <span class="massagem-col__dia">19/Set</span>
+              </div>
+              <div class="massagem-col__slots">
+                <a class="massagem-h" href="https://wa.me/351966201175?text=Ol%C3%A1%21%20Quero%20marcar%20massagem%20no%20dia%2019%20de%20Setembro%20%28S%C3%A1bado%29%20%C3%A0s%2014%3A00." target="_blank" rel="noopener noreferrer" aria-label="Marcar massagem Sábado 19/Set 14:00">14:00</a>
+                <a class="massagem-h" href="https://wa.me/351966201175?text=Ol%C3%A1%21%20Quero%20marcar%20massagem%20no%20dia%2019%20de%20Setembro%20%28S%C3%A1bado%29%20%C3%A0s%2015%3A00." target="_blank" rel="noopener noreferrer" aria-label="Marcar massagem Sábado 19/Set 15:00">15:00</a>
+                <a class="massagem-h" href="https://wa.me/351966201175?text=Ol%C3%A1%21%20Quero%20marcar%20massagem%20no%20dia%2019%20de%20Setembro%20%28S%C3%A1bado%29%20%C3%A0s%2016%3A00." target="_blank" rel="noopener noreferrer" aria-label="Marcar massagem Sábado 19/Set 16:00">16:00</a>
+                <a class="massagem-h" href="https://wa.me/351966201175?text=Ol%C3%A1%21%20Quero%20marcar%20massagem%20no%20dia%2019%20de%20Setembro%20%28S%C3%A1bado%29%20%C3%A0s%2017%3A00." target="_blank" rel="noopener noreferrer" aria-label="Marcar massagem Sábado 19/Set 17:00">17:00</a>
+                <a class="massagem-h massagem-h--ultimo" href="https://wa.me/351966201175?text=Ol%C3%A1%21%20Quero%20marcar%20massagem%20no%20dia%2019%20de%20Setembro%20%28S%C3%A1bado%29%20%C3%A0s%2018%3A00." target="_blank" rel="noopener noreferrer" aria-label="Marcar massagem Sábado 19/Set 18:00">18:00</a>
+              </div>
+            </div>
+            <div class="massagem-col" style="animation-delay:0.00s">
+              <div class="massagem-col__header massa-qua">
+                <span class="massagem-col__abbr">4.ª</span>
+                <span class="massagem-col__dia">23/Set</span>
+              </div>
+              <div class="massagem-col__slots">
+                <a class="massagem-h" href="https://wa.me/351966201175?text=Ol%C3%A1%21%20Quero%20marcar%20massagem%20no%20dia%2023%20de%20Setembro%20%28Quarta-feira%29%20%C3%A0s%2018%3A00." target="_blank" rel="noopener noreferrer" aria-label="Marcar massagem Quarta-feira 23/Set 18:00">18:00</a>
+                <a class="massagem-h massagem-h--ultimo" href="https://wa.me/351966201175?text=Ol%C3%A1%21%20Quero%20marcar%20massagem%20no%20dia%2023%20de%20Setembro%20%28Quarta-feira%29%20%C3%A0s%2019%3A00." target="_blank" rel="noopener noreferrer" aria-label="Marcar massagem Quarta-feira 23/Set 19:00">19:00</a>
+              </div>
+            </div>
+            <div class="massagem-col" style="animation-delay:0.07s">
+              <div class="massagem-col__header massa-qui">
+                <span class="massagem-col__abbr">5.ª</span>
+                <span class="massagem-col__dia">24/Set</span>
+              </div>
+              <div class="massagem-col__slots">
+                <a class="massagem-h" href="https://wa.me/351966201175?text=Ol%C3%A1%21%20Quero%20marcar%20massagem%20no%20dia%2024%20de%20Setembro%20%28Quinta-feira%29%20%C3%A0s%2018%3A00." target="_blank" rel="noopener noreferrer" aria-label="Marcar massagem Quinta-feira 24/Set 18:00">18:00</a>
+                <a class="massagem-h massagem-h--ultimo" href="https://wa.me/351966201175?text=Ol%C3%A1%21%20Quero%20marcar%20massagem%20no%20dia%2024%20de%20Setembro%20%28Quinta-feira%29%20%C3%A0s%2019%3A00." target="_blank" rel="noopener noreferrer" aria-label="Marcar massagem Quinta-feira 24/Set 19:00">19:00</a>
+              </div>
+            </div>
+            <div class="massagem-col" style="animation-delay:0.14s">
+              <div class="massagem-col__header massa-sex">
+                <span class="massagem-col__abbr">6.ª</span>
+                <span class="massagem-col__dia">25/Set</span>
+              </div>
+              <div class="massagem-col__slots">
+                <a class="massagem-h" href="https://wa.me/351966201175?text=Ol%C3%A1%21%20Quero%20marcar%20massagem%20no%20dia%2025%20de%20Setembro%20%28Sexta-feira%29%20%C3%A0s%2018%3A00." target="_blank" rel="noopener noreferrer" aria-label="Marcar massagem Sexta-feira 25/Set 18:00">18:00</a>
+                <a class="massagem-h massagem-h--ultimo" href="https://wa.me/351966201175?text=Ol%C3%A1%21%20Quero%20marcar%20massagem%20no%20dia%2025%20de%20Setembro%20%28Sexta-feira%29%20%C3%A0s%2019%3A00." target="_blank" rel="noopener noreferrer" aria-label="Marcar massagem Sexta-feira 25/Set 19:00">19:00</a>
+              </div>
+            </div>
+            <div class="massagem-col" style="animation-delay:0.21s">
+              <div class="massagem-col__header massa-sab">
+                <span class="massagem-col__abbr">Sáb</span>
+                <span class="massagem-col__dia">26/Set</span>
+              </div>
+              <div class="massagem-col__slots">
+                <a class="massagem-h" href="https://wa.me/351966201175?text=Ol%C3%A1%21%20Quero%20marcar%20massagem%20no%20dia%2026%20de%20Setembro%20%28S%C3%A1bado%29%20%C3%A0s%2014%3A00." target="_blank" rel="noopener noreferrer" aria-label="Marcar massagem Sábado 26/Set 14:00">14:00</a>
+                <a class="massagem-h" href="https://wa.me/351966201175?text=Ol%C3%A1%21%20Quero%20marcar%20massagem%20no%20dia%2026%20de%20Setembro%20%28S%C3%A1bado%29%20%C3%A0s%2015%3A00." target="_blank" rel="noopener noreferrer" aria-label="Marcar massagem Sábado 26/Set 15:00">15:00</a>
+                <a class="massagem-h" href="https://wa.me/351966201175?text=Ol%C3%A1%21%20Quero%20marcar%20massagem%20no%20dia%2026%20de%20Setembro%20%28S%C3%A1bado%29%20%C3%A0s%2016%3A00." target="_blank" rel="noopener noreferrer" aria-label="Marcar massagem Sábado 26/Set 16:00">16:00</a>
+                <a class="massagem-h" href="https://wa.me/351966201175?text=Ol%C3%A1%21%20Quero%20marcar%20massagem%20no%20dia%2026%20de%20Setembro%20%28S%C3%A1bado%29%20%C3%A0s%2017%3A00." target="_blank" rel="noopener noreferrer" aria-label="Marcar massagem Sábado 26/Set 17:00">17:00</a>
+                <a class="massagem-h massagem-h--ultimo" href="https://wa.me/351966201175?text=Ol%C3%A1%21%20Quero%20marcar%20massagem%20no%20dia%2026%20de%20Setembro%20%28S%C3%A1bado%29%20%C3%A0s%2018%3A00." target="_blank" rel="noopener noreferrer" aria-label="Marcar massagem Sábado 26/Set 18:00">18:00</a>
+              </div>
+            </div>
+            <div class="massagem-col" style="animation-delay:0.00s">
+              <div class="massagem-col__header massa-qua">
+                <span class="massagem-col__abbr">4.ª</span>
+                <span class="massagem-col__dia">30/Set</span>
+              </div>
+              <div class="massagem-col__slots">
+                <a class="massagem-h" href="https://wa.me/351966201175?text=Ol%C3%A1%21%20Quero%20marcar%20massagem%20no%20dia%2030%20de%20Setembro%20%28Quarta-feira%29%20%C3%A0s%2018%3A00." target="_blank" rel="noopener noreferrer" aria-label="Marcar massagem Quarta-feira 30/Set 18:00">18:00</a>
+                <a class="massagem-h massagem-h--ultimo" href="https://wa.me/351966201175?text=Ol%C3%A1%21%20Quero%20marcar%20massagem%20no%20dia%2030%20de%20Setembro%20%28Quarta-feira%29%20%C3%A0s%2019%3A00." target="_blank" rel="noopener noreferrer" aria-label="Marcar massagem Quarta-feira 30/Set 19:00">19:00</a>
+              </div>
+            </div>
+          </div>
+        </div>
+-->
 
-          <div class="massagem-col" style="animation-delay:0.00s">
-            <div class="massagem-col__header massa-qua">
-              <span class="massagem-col__abbr">4.ª</span>
-              <span class="massagem-col__dia">3/Jun</span>
-            </div>
-            <div class="massagem-col__slots">
-            <a class="massagem-h" href="https://wa.me/351966201175?text=Ol%C3%A1%21%20Quero%20marcar%20massagem%20no%20dia%203%20de%20Junho%20%28Quarta-feira%29%20%C3%A0s%2018%3A00." target="_blank" rel="noopener noreferrer" aria-label="Marcar massagem Quarta-feira 3/Jun 18:00">18:00</a>
-            <a class="massagem-h massagem-h--ultimo" href="https://wa.me/351966201175?text=Ol%C3%A1%21%20Quero%20marcar%20massagem%20no%20dia%203%20de%20Junho%20%28Quarta-feira%29%20%C3%A0s%2019%3A00." target="_blank" rel="noopener noreferrer" aria-label="Marcar massagem Quarta-feira 3/Jun 19:00">19:00</a>
-            </div>
+        <div class="mes-bloco reveal por-marcacoes">
+          <div class="mes-titulo">
+            <span class="mes-titulo__label">Setembro 2026</span>
           </div>
-          <div class="massagem-col" style="animation-delay:0.07s">
-            <div class="massagem-col__header massa-qui">
-              <span class="massagem-col__abbr">5.ª</span>
-              <span class="massagem-col__dia">4/Jun</span>
-            </div>
-            <div class="massagem-col__slots">
-            <a class="massagem-h" href="https://wa.me/351966201175?text=Ol%C3%A1%21%20Quero%20marcar%20massagem%20no%20dia%204%20de%20Junho%20%28Quinta-feira%29%20%C3%A0s%2018%3A00." target="_blank" rel="noopener noreferrer" aria-label="Marcar massagem Quinta-feira 4/Jun 18:00">18:00</a>
-            <a class="massagem-h massagem-h--ultimo" href="https://wa.me/351966201175?text=Ol%C3%A1%21%20Quero%20marcar%20massagem%20no%20dia%204%20de%20Junho%20%28Quinta-feira%29%20%C3%A0s%2019%3A00." target="_blank" rel="noopener noreferrer" aria-label="Marcar massagem Quinta-feira 4/Jun 19:00">19:00</a>
-            </div>
-          </div>
-          <div class="massagem-col" style="animation-delay:0.14s">
-            <div class="massagem-col__header massa-sex">
-              <span class="massagem-col__abbr">6.ª</span>
-              <span class="massagem-col__dia">5/Jun</span>
-            </div>
-            <div class="massagem-col__slots">
-            <a class="massagem-h" href="https://wa.me/351966201175?text=Ol%C3%A1%21%20Quero%20marcar%20massagem%20no%20dia%205%20de%20Junho%20%28Sexta-feira%29%20%C3%A0s%2018%3A00." target="_blank" rel="noopener noreferrer" aria-label="Marcar massagem Sexta-feira 5/Jun 18:00">18:00</a>
-            <a class="massagem-h massagem-h--ultimo" href="https://wa.me/351966201175?text=Ol%C3%A1%21%20Quero%20marcar%20massagem%20no%20dia%205%20de%20Junho%20%28Sexta-feira%29%20%C3%A0s%2019%3A00." target="_blank" rel="noopener noreferrer" aria-label="Marcar massagem Sexta-feira 5/Jun 19:00">19:00</a>
-            </div>
-          </div>
-          <div class="massagem-col" style="animation-delay:0.21s">
-            <div class="massagem-col__header massa-sab">
-              <span class="massagem-col__abbr">Sáb</span>
-              <span class="massagem-col__dia">6/Jun</span>
-            </div>
-            <div class="massagem-col__slots">
-            <a class="massagem-h" href="https://wa.me/351966201175?text=Ol%C3%A1%21%20Quero%20marcar%20massagem%20no%20dia%206%20de%20Junho%20%28S%C3%A1bado%29%20%C3%A0s%2014%3A00." target="_blank" rel="noopener noreferrer" aria-label="Marcar massagem Sábado 6/Jun 14:00">14:00</a>
-            <a class="massagem-h" href="https://wa.me/351966201175?text=Ol%C3%A1%21%20Quero%20marcar%20massagem%20no%20dia%206%20de%20Junho%20%28S%C3%A1bado%29%20%C3%A0s%2015%3A00." target="_blank" rel="noopener noreferrer" aria-label="Marcar massagem Sábado 6/Jun 15:00">15:00</a>
-            <a class="massagem-h" href="https://wa.me/351966201175?text=Ol%C3%A1%21%20Quero%20marcar%20massagem%20no%20dia%206%20de%20Junho%20%28S%C3%A1bado%29%20%C3%A0s%2016%3A00." target="_blank" rel="noopener noreferrer" aria-label="Marcar massagem Sábado 6/Jun 16:00">16:00</a>
-            <a class="massagem-h" href="https://wa.me/351966201175?text=Ol%C3%A1%21%20Quero%20marcar%20massagem%20no%20dia%206%20de%20Junho%20%28S%C3%A1bado%29%20%C3%A0s%2017%3A00." target="_blank" rel="noopener noreferrer" aria-label="Marcar massagem Sábado 6/Jun 17:00">17:00</a>
-            <a class="massagem-h massagem-h--ultimo" href="https://wa.me/351966201175?text=Ol%C3%A1%21%20Quero%20marcar%20massagem%20no%20dia%206%20de%20Junho%20%28S%C3%A1bado%29%20%C3%A0s%2018%3A00." target="_blank" rel="noopener noreferrer" aria-label="Marcar massagem Sábado 6/Jun 18:00">18:00</a>
-            </div>
-          </div>
-          <div class="massagem-col" style="animation-delay:0.28s">
-            <div class="massagem-col__header massa-qua">
-              <span class="massagem-col__abbr">4.ª</span>
-              <span class="massagem-col__dia">10/Jun</span>
-            </div>
-            <div class="massagem-col__slots">
-            <a class="massagem-h" href="https://wa.me/351966201175?text=Ol%C3%A1%21%20Quero%20marcar%20massagem%20no%20dia%2010%20de%20Junho%20%28Quarta-feira%29%20%C3%A0s%2018%3A00." target="_blank" rel="noopener noreferrer" aria-label="Marcar massagem Quarta-feira 10/Jun 18:00">18:00</a>
-            <a class="massagem-h massagem-h--ultimo" href="https://wa.me/351966201175?text=Ol%C3%A1%21%20Quero%20marcar%20massagem%20no%20dia%2010%20de%20Junho%20%28Quarta-feira%29%20%C3%A0s%2019%3A00." target="_blank" rel="noopener noreferrer" aria-label="Marcar massagem Quarta-feira 10/Jun 19:00">19:00</a>
-            </div>
-          </div>
-          <div class="massagem-col" style="animation-delay:0.35s">
-            <div class="massagem-col__header massa-qui">
-              <span class="massagem-col__abbr">5.ª</span>
-              <span class="massagem-col__dia">11/Jun</span>
-            </div>
-            <div class="massagem-col__slots">
-            <a class="massagem-h" href="https://wa.me/351966201175?text=Ol%C3%A1%21%20Quero%20marcar%20massagem%20no%20dia%2011%20de%20Junho%20%28Quinta-feira%29%20%C3%A0s%2018%3A00." target="_blank" rel="noopener noreferrer" aria-label="Marcar massagem Quinta-feira 11/Jun 18:00">18:00</a>
-            <a class="massagem-h massagem-h--ultimo" href="https://wa.me/351966201175?text=Ol%C3%A1%21%20Quero%20marcar%20massagem%20no%20dia%2011%20de%20Junho%20%28Quinta-feira%29%20%C3%A0s%2019%3A00." target="_blank" rel="noopener noreferrer" aria-label="Marcar massagem Quinta-feira 11/Jun 19:00">19:00</a>
-            </div>
-          </div>
-          <div class="massagem-col" style="animation-delay:0.42s">
-            <div class="massagem-col__header massa-sex">
-              <span class="massagem-col__abbr">6.ª</span>
-              <span class="massagem-col__dia">12/Jun</span>
-            </div>
-            <div class="massagem-col__slots">
-            <a class="massagem-h" href="https://wa.me/351966201175?text=Ol%C3%A1%21%20Quero%20marcar%20massagem%20no%20dia%2012%20de%20Junho%20%28Sexta-feira%29%20%C3%A0s%2018%3A00." target="_blank" rel="noopener noreferrer" aria-label="Marcar massagem Sexta-feira 12/Jun 18:00">18:00</a>
-            <a class="massagem-h massagem-h--ultimo" href="https://wa.me/351966201175?text=Ol%C3%A1%21%20Quero%20marcar%20massagem%20no%20dia%2012%20de%20Junho%20%28Sexta-feira%29%20%C3%A0s%2019%3A00." target="_blank" rel="noopener noreferrer" aria-label="Marcar massagem Sexta-feira 12/Jun 19:00">19:00</a>
-            </div>
-          </div>
-          <div class="massagem-col" style="animation-delay:0.00s">
-            <div class="massagem-col__header massa-sab">
-              <span class="massagem-col__abbr">Sáb</span>
-              <span class="massagem-col__dia">13/Jun</span>
-            </div>
-            <div class="massagem-col__slots">
-            <a class="massagem-h" href="https://wa.me/351966201175?text=Ol%C3%A1%21%20Quero%20marcar%20massagem%20no%20dia%2013%20de%20Junho%20%28S%C3%A1bado%29%20%C3%A0s%2014%3A00." target="_blank" rel="noopener noreferrer" aria-label="Marcar massagem Sábado 13/Jun 14:00">14:00</a>
-            <a class="massagem-h" href="https://wa.me/351966201175?text=Ol%C3%A1%21%20Quero%20marcar%20massagem%20no%20dia%2013%20de%20Junho%20%28S%C3%A1bado%29%20%C3%A0s%2015%3A00." target="_blank" rel="noopener noreferrer" aria-label="Marcar massagem Sábado 13/Jun 15:00">15:00</a>
-            <a class="massagem-h" href="https://wa.me/351966201175?text=Ol%C3%A1%21%20Quero%20marcar%20massagem%20no%20dia%2013%20de%20Junho%20%28S%C3%A1bado%29%20%C3%A0s%2016%3A00." target="_blank" rel="noopener noreferrer" aria-label="Marcar massagem Sábado 13/Jun 16:00">16:00</a>
-            <a class="massagem-h" href="https://wa.me/351966201175?text=Ol%C3%A1%21%20Quero%20marcar%20massagem%20no%20dia%2013%20de%20Junho%20%28S%C3%A1bado%29%20%C3%A0s%2017%3A00." target="_blank" rel="noopener noreferrer" aria-label="Marcar massagem Sábado 13/Jun 17:00">17:00</a>
-            <a class="massagem-h massagem-h--ultimo" href="https://wa.me/351966201175?text=Ol%C3%A1%21%20Quero%20marcar%20massagem%20no%20dia%2013%20de%20Junho%20%28S%C3%A1bado%29%20%C3%A0s%2018%3A00." target="_blank" rel="noopener noreferrer" aria-label="Marcar massagem Sábado 13/Jun 18:00">18:00</a>
-            </div>
-          </div>
-          <div class="massagem-col" style="animation-delay:0.07s">
-            <div class="massagem-col__header massa-qua">
-              <span class="massagem-col__abbr">4.ª</span>
-              <span class="massagem-col__dia">17/Jun</span>
-            </div>
-            <div class="massagem-col__slots">
-            <a class="massagem-h" href="https://wa.me/351966201175?text=Ol%C3%A1%21%20Quero%20marcar%20massagem%20no%20dia%2017%20de%20Junho%20%28Quarta-feira%29%20%C3%A0s%2018%3A00." target="_blank" rel="noopener noreferrer" aria-label="Marcar massagem Quarta-feira 17/Jun 18:00">18:00</a>
-            <a class="massagem-h massagem-h--ultimo" href="https://wa.me/351966201175?text=Ol%C3%A1%21%20Quero%20marcar%20massagem%20no%20dia%2017%20de%20Junho%20%28Quarta-feira%29%20%C3%A0s%2019%3A00." target="_blank" rel="noopener noreferrer" aria-label="Marcar massagem Quarta-feira 17/Jun 19:00">19:00</a>
-            </div>
-          </div>
-          <div class="massagem-col" style="animation-delay:0.14s">
-            <div class="massagem-col__header massa-qui">
-              <span class="massagem-col__abbr">5.ª</span>
-              <span class="massagem-col__dia">18/Jun</span>
-            </div>
-            <div class="massagem-col__slots">
-            <a class="massagem-h" href="https://wa.me/351966201175?text=Ol%C3%A1%21%20Quero%20marcar%20massagem%20no%20dia%2018%20de%20Junho%20%28Quinta-feira%29%20%C3%A0s%2018%3A00." target="_blank" rel="noopener noreferrer" aria-label="Marcar massagem Quinta-feira 18/Jun 18:00">18:00</a>
-            <a class="massagem-h massagem-h--ultimo" href="https://wa.me/351966201175?text=Ol%C3%A1%21%20Quero%20marcar%20massagem%20no%20dia%2018%20de%20Junho%20%28Quinta-feira%29%20%C3%A0s%2019%3A00." target="_blank" rel="noopener noreferrer" aria-label="Marcar massagem Quinta-feira 18/Jun 19:00">19:00</a>
-            </div>
-          </div>
-          <div class="massagem-col" style="animation-delay:0.21s">
-            <div class="massagem-col__header massa-sex">
-              <span class="massagem-col__abbr">6.ª</span>
-              <span class="massagem-col__dia">19/Jun</span>
-            </div>
-            <div class="massagem-col__slots">
-            <a class="massagem-h" href="https://wa.me/351966201175?text=Ol%C3%A1%21%20Quero%20marcar%20massagem%20no%20dia%2019%20de%20Junho%20%28Sexta-feira%29%20%C3%A0s%2018%3A00." target="_blank" rel="noopener noreferrer" aria-label="Marcar massagem Sexta-feira 19/Jun 18:00">18:00</a>
-            <a class="massagem-h massagem-h--ultimo" href="https://wa.me/351966201175?text=Ol%C3%A1%21%20Quero%20marcar%20massagem%20no%20dia%2019%20de%20Junho%20%28Sexta-feira%29%20%C3%A0s%2019%3A00." target="_blank" rel="noopener noreferrer" aria-label="Marcar massagem Sexta-feira 19/Jun 19:00">19:00</a>
-            </div>
-          </div>
-          <div class="massagem-col" style="animation-delay:0.28s">
-            <div class="massagem-col__header massa-sab">
-              <span class="massagem-col__abbr">Sáb</span>
-              <span class="massagem-col__dia">20/Jun</span>
-            </div>
-            <div class="massagem-col__slots">
-            <a class="massagem-h" href="https://wa.me/351966201175?text=Ol%C3%A1%21%20Quero%20marcar%20massagem%20no%20dia%2020%20de%20Junho%20%28S%C3%A1bado%29%20%C3%A0s%2014%3A00." target="_blank" rel="noopener noreferrer" aria-label="Marcar massagem Sábado 20/Jun 14:00">14:00</a>
-            <a class="massagem-h" href="https://wa.me/351966201175?text=Ol%C3%A1%21%20Quero%20marcar%20massagem%20no%20dia%2020%20de%20Junho%20%28S%C3%A1bado%29%20%C3%A0s%2015%3A00." target="_blank" rel="noopener noreferrer" aria-label="Marcar massagem Sábado 20/Jun 15:00">15:00</a>
-            <a class="massagem-h" href="https://wa.me/351966201175?text=Ol%C3%A1%21%20Quero%20marcar%20massagem%20no%20dia%2020%20de%20Junho%20%28S%C3%A1bado%29%20%C3%A0s%2016%3A00." target="_blank" rel="noopener noreferrer" aria-label="Marcar massagem Sábado 20/Jun 16:00">16:00</a>
-            <a class="massagem-h" href="https://wa.me/351966201175?text=Ol%C3%A1%21%20Quero%20marcar%20massagem%20no%20dia%2020%20de%20Junho%20%28S%C3%A1bado%29%20%C3%A0s%2017%3A00." target="_blank" rel="noopener noreferrer" aria-label="Marcar massagem Sábado 20/Jun 17:00">17:00</a>
-            <a class="massagem-h massagem-h--ultimo" href="https://wa.me/351966201175?text=Ol%C3%A1%21%20Quero%20marcar%20massagem%20no%20dia%2020%20de%20Junho%20%28S%C3%A1bado%29%20%C3%A0s%2018%3A00." target="_blank" rel="noopener noreferrer" aria-label="Marcar massagem Sábado 20/Jun 18:00">18:00</a>
-            </div>
-          </div>
-          <div class="massagem-col" style="animation-delay:0.35s">
-            <div class="massagem-col__header massa-qua">
-              <span class="massagem-col__abbr">4.ª</span>
-              <span class="massagem-col__dia">24/Jun</span>
-            </div>
-            <div class="massagem-col__slots">
-            <a class="massagem-h" href="https://wa.me/351966201175?text=Ol%C3%A1%21%20Quero%20marcar%20massagem%20no%20dia%2024%20de%20Junho%20%28Quarta-feira%29%20%C3%A0s%2018%3A00." target="_blank" rel="noopener noreferrer" aria-label="Marcar massagem Quarta-feira 24/Jun 18:00">18:00</a>
-            <a class="massagem-h massagem-h--ultimo" href="https://wa.me/351966201175?text=Ol%C3%A1%21%20Quero%20marcar%20massagem%20no%20dia%2024%20de%20Junho%20%28Quarta-feira%29%20%C3%A0s%2019%3A00." target="_blank" rel="noopener noreferrer" aria-label="Marcar massagem Quarta-feira 24/Jun 19:00">19:00</a>
-            </div>
-          </div>
-          <div class="massagem-col" style="animation-delay:0.42s">
-            <div class="massagem-col__header massa-qui">
-              <span class="massagem-col__abbr">5.ª</span>
-              <span class="massagem-col__dia">25/Jun</span>
-            </div>
-            <div class="massagem-col__slots">
-            <a class="massagem-h" href="https://wa.me/351966201175?text=Ol%C3%A1%21%20Quero%20marcar%20massagem%20no%20dia%2025%20de%20Junho%20%28Quinta-feira%29%20%C3%A0s%2018%3A00." target="_blank" rel="noopener noreferrer" aria-label="Marcar massagem Quinta-feira 25/Jun 18:00">18:00</a>
-            <a class="massagem-h massagem-h--ultimo" href="https://wa.me/351966201175?text=Ol%C3%A1%21%20Quero%20marcar%20massagem%20no%20dia%2025%20de%20Junho%20%28Quinta-feira%29%20%C3%A0s%2019%3A00." target="_blank" rel="noopener noreferrer" aria-label="Marcar massagem Quinta-feira 25/Jun 19:00">19:00</a>
-            </div>
-          </div>
-          <div class="massagem-col" style="animation-delay:0.00s">
-            <div class="massagem-col__header massa-sex">
-              <span class="massagem-col__abbr">6.ª</span>
-              <span class="massagem-col__dia">26/Jun</span>
-            </div>
-            <div class="massagem-col__slots">
-            <a class="massagem-h" href="https://wa.me/351966201175?text=Ol%C3%A1%21%20Quero%20marcar%20massagem%20no%20dia%2026%20de%20Junho%20%28Sexta-feira%29%20%C3%A0s%2018%3A00." target="_blank" rel="noopener noreferrer" aria-label="Marcar massagem Sexta-feira 26/Jun 18:00">18:00</a>
-            <a class="massagem-h massagem-h--ultimo" href="https://wa.me/351966201175?text=Ol%C3%A1%21%20Quero%20marcar%20massagem%20no%20dia%2026%20de%20Junho%20%28Sexta-feira%29%20%C3%A0s%2019%3A00." target="_blank" rel="noopener noreferrer" aria-label="Marcar massagem Sexta-feira 26/Jun 19:00">19:00</a>
-            </div>
-          </div>
-          <div class="massagem-col" style="animation-delay:0.07s">
-            <div class="massagem-col__header massa-sab">
-              <span class="massagem-col__abbr">Sáb</span>
-              <span class="massagem-col__dia">27/Jun</span>
-            </div>
-            <div class="massagem-col__slots">
-            <a class="massagem-h" href="https://wa.me/351966201175?text=Ol%C3%A1%21%20Quero%20marcar%20massagem%20no%20dia%2027%20de%20Junho%20%28S%C3%A1bado%29%20%C3%A0s%2014%3A00." target="_blank" rel="noopener noreferrer" aria-label="Marcar massagem Sábado 27/Jun 14:00">14:00</a>
-            <a class="massagem-h" href="https://wa.me/351966201175?text=Ol%C3%A1%21%20Quero%20marcar%20massagem%20no%20dia%2027%20de%20Junho%20%28S%C3%A1bado%29%20%C3%A0s%2015%3A00." target="_blank" rel="noopener noreferrer" aria-label="Marcar massagem Sábado 27/Jun 15:00">15:00</a>
-            <a class="massagem-h" href="https://wa.me/351966201175?text=Ol%C3%A1%21%20Quero%20marcar%20massagem%20no%20dia%2027%20de%20Junho%20%28S%C3%A1bado%29%20%C3%A0s%2016%3A00." target="_blank" rel="noopener noreferrer" aria-label="Marcar massagem Sábado 27/Jun 16:00">16:00</a>
-            <a class="massagem-h" href="https://wa.me/351966201175?text=Ol%C3%A1%21%20Quero%20marcar%20massagem%20no%20dia%2027%20de%20Junho%20%28S%C3%A1bado%29%20%C3%A0s%2017%3A00." target="_blank" rel="noopener noreferrer" aria-label="Marcar massagem Sábado 27/Jun 17:00">17:00</a>
-            <a class="massagem-h massagem-h--ultimo" href="https://wa.me/351966201175?text=Ol%C3%A1%21%20Quero%20marcar%20massagem%20no%20dia%2027%20de%20Junho%20%28S%C3%A1bado%29%20%C3%A0s%2018%3A00." target="_blank" rel="noopener noreferrer" aria-label="Marcar massagem Sábado 27/Jun 18:00">18:00</a>
-            </div>
-          </div>
+          <div class="por-marcacoes__aviso">
+            <i class="bi bi-calendar-check por-marcacoes__icone" aria-hidden="true"></i>
+            <p class="por-marcacoes__titulo">Disponibilidade por marcação</p>
+            <p class="por-marcacoes__texto">
+              De momento a Cecília está a atender exclusivamente por marcação prévia.
+              Escreve para o WhatsApp com o teu dia e hora preferidos e confirmamos a disponibilidade.
+            </p>
+            <a href="https://wa.me/351966201175?text=Ol%C3%A1%21%20Quero%20marcar%20massagem%20com%20a%20Cec%C3%ADlia.%20O%20meu%20dia%20e%20hora%20preferidos%20s%C3%A3o%3A%20"
+               target="_blank" rel="noopener noreferrer" class="btn btn-wa btn-md por-marcacoes__cta">
+              <i class="bi bi-whatsapp me-1" aria-hidden="true"></i>Marcar via WhatsApp
+            </a>
           </div>
         </div>
 
-        <div class="mes-bloco reveal">
-          <div class="mes-titulo">
-            <span class="mes-titulo__label">Julho 2026</span>
-          </div>
-          <div class="massagem-mes-grid">
-
-          <div class="massagem-col" style="animation-delay:0.00s">
-            <div class="massagem-col__header massa-qua">
-              <span class="massagem-col__abbr">4.ª</span>
-              <span class="massagem-col__dia">1/Jul</span>
-            </div>
-            <div class="massagem-col__slots">
-            <a class="massagem-h" href="https://wa.me/351966201175?text=Ol%C3%A1%21%20Quero%20marcar%20massagem%20no%20dia%201%20de%20Julho%20%28Quarta-feira%29%20%C3%A0s%2018%3A00." target="_blank" rel="noopener noreferrer" aria-label="Marcar massagem Quarta-feira 1/Jul 18:00">18:00</a>
-            <a class="massagem-h massagem-h--ultimo" href="https://wa.me/351966201175?text=Ol%C3%A1%21%20Quero%20marcar%20massagem%20no%20dia%201%20de%20Julho%20%28Quarta-feira%29%20%C3%A0s%2019%3A00." target="_blank" rel="noopener noreferrer" aria-label="Marcar massagem Quarta-feira 1/Jul 19:00">19:00</a>
-            </div>
-          </div>
-          <div class="massagem-col" style="animation-delay:0.07s">
-            <div class="massagem-col__header massa-qui">
-              <span class="massagem-col__abbr">5.ª</span>
-              <span class="massagem-col__dia">2/Jul</span>
-            </div>
-            <div class="massagem-col__slots">
-            <a class="massagem-h" href="https://wa.me/351966201175?text=Ol%C3%A1%21%20Quero%20marcar%20massagem%20no%20dia%202%20de%20Julho%20%28Quinta-feira%29%20%C3%A0s%2018%3A00." target="_blank" rel="noopener noreferrer" aria-label="Marcar massagem Quinta-feira 2/Jul 18:00">18:00</a>
-            <a class="massagem-h massagem-h--ultimo" href="https://wa.me/351966201175?text=Ol%C3%A1%21%20Quero%20marcar%20massagem%20no%20dia%202%20de%20Julho%20%28Quinta-feira%29%20%C3%A0s%2019%3A00." target="_blank" rel="noopener noreferrer" aria-label="Marcar massagem Quinta-feira 2/Jul 19:00">19:00</a>
-            </div>
-          </div>
-          <div class="massagem-col" style="animation-delay:0.14s">
-            <div class="massagem-col__header massa-sex">
-              <span class="massagem-col__abbr">6.ª</span>
-              <span class="massagem-col__dia">3/Jul</span>
-            </div>
-            <div class="massagem-col__slots">
-            <a class="massagem-h" href="https://wa.me/351966201175?text=Ol%C3%A1%21%20Quero%20marcar%20massagem%20no%20dia%203%20de%20Julho%20%28Sexta-feira%29%20%C3%A0s%2018%3A00." target="_blank" rel="noopener noreferrer" aria-label="Marcar massagem Sexta-feira 3/Jul 18:00">18:00</a>
-            <a class="massagem-h massagem-h--ultimo" href="https://wa.me/351966201175?text=Ol%C3%A1%21%20Quero%20marcar%20massagem%20no%20dia%203%20de%20Julho%20%28Sexta-feira%29%20%C3%A0s%2019%3A00." target="_blank" rel="noopener noreferrer" aria-label="Marcar massagem Sexta-feira 3/Jul 19:00">19:00</a>
-            </div>
-          </div>
-          <div class="massagem-col" style="animation-delay:0.21s">
-            <div class="massagem-col__header massa-sab">
-              <span class="massagem-col__abbr">Sáb</span>
-              <span class="massagem-col__dia">4/Jul</span>
-            </div>
-            <div class="massagem-col__slots">
-            <a class="massagem-h" href="https://wa.me/351966201175?text=Ol%C3%A1%21%20Quero%20marcar%20massagem%20no%20dia%204%20de%20Julho%20%28S%C3%A1bado%29%20%C3%A0s%2014%3A00." target="_blank" rel="noopener noreferrer" aria-label="Marcar massagem Sábado 4/Jul 14:00">14:00</a>
-            <a class="massagem-h" href="https://wa.me/351966201175?text=Ol%C3%A1%21%20Quero%20marcar%20massagem%20no%20dia%204%20de%20Julho%20%28S%C3%A1bado%29%20%C3%A0s%2015%3A00." target="_blank" rel="noopener noreferrer" aria-label="Marcar massagem Sábado 4/Jul 15:00">15:00</a>
-            <a class="massagem-h" href="https://wa.me/351966201175?text=Ol%C3%A1%21%20Quero%20marcar%20massagem%20no%20dia%204%20de%20Julho%20%28S%C3%A1bado%29%20%C3%A0s%2016%3A00." target="_blank" rel="noopener noreferrer" aria-label="Marcar massagem Sábado 4/Jul 16:00">16:00</a>
-            <a class="massagem-h" href="https://wa.me/351966201175?text=Ol%C3%A1%21%20Quero%20marcar%20massagem%20no%20dia%204%20de%20Julho%20%28S%C3%A1bado%29%20%C3%A0s%2017%3A00." target="_blank" rel="noopener noreferrer" aria-label="Marcar massagem Sábado 4/Jul 17:00">17:00</a>
-            <a class="massagem-h massagem-h--ultimo" href="https://wa.me/351966201175?text=Ol%C3%A1%21%20Quero%20marcar%20massagem%20no%20dia%204%20de%20Julho%20%28S%C3%A1bado%29%20%C3%A0s%2018%3A00." target="_blank" rel="noopener noreferrer" aria-label="Marcar massagem Sábado 4/Jul 18:00">18:00</a>
-            </div>
-          </div>
-          <div class="massagem-col" style="animation-delay:0.28s">
-            <div class="massagem-col__header massa-qua">
-              <span class="massagem-col__abbr">4.ª</span>
-              <span class="massagem-col__dia">8/Jul</span>
-            </div>
-            <div class="massagem-col__slots">
-            <a class="massagem-h" href="https://wa.me/351966201175?text=Ol%C3%A1%21%20Quero%20marcar%20massagem%20no%20dia%208%20de%20Julho%20%28Quarta-feira%29%20%C3%A0s%2018%3A00." target="_blank" rel="noopener noreferrer" aria-label="Marcar massagem Quarta-feira 8/Jul 18:00">18:00</a>
-            <a class="massagem-h massagem-h--ultimo" href="https://wa.me/351966201175?text=Ol%C3%A1%21%20Quero%20marcar%20massagem%20no%20dia%208%20de%20Julho%20%28Quarta-feira%29%20%C3%A0s%2019%3A00." target="_blank" rel="noopener noreferrer" aria-label="Marcar massagem Quarta-feira 8/Jul 19:00">19:00</a>
-            </div>
-          </div>
-          <div class="massagem-col" style="animation-delay:0.35s">
-            <div class="massagem-col__header massa-qui">
-              <span class="massagem-col__abbr">5.ª</span>
-              <span class="massagem-col__dia">9/Jul</span>
-            </div>
-            <div class="massagem-col__slots">
-            <a class="massagem-h" href="https://wa.me/351966201175?text=Ol%C3%A1%21%20Quero%20marcar%20massagem%20no%20dia%209%20de%20Julho%20%28Quinta-feira%29%20%C3%A0s%2018%3A00." target="_blank" rel="noopener noreferrer" aria-label="Marcar massagem Quinta-feira 9/Jul 18:00">18:00</a>
-            <a class="massagem-h massagem-h--ultimo" href="https://wa.me/351966201175?text=Ol%C3%A1%21%20Quero%20marcar%20massagem%20no%20dia%209%20de%20Julho%20%28Quinta-feira%29%20%C3%A0s%2019%3A00." target="_blank" rel="noopener noreferrer" aria-label="Marcar massagem Quinta-feira 9/Jul 19:00">19:00</a>
-            </div>
-          </div>
-          <div class="massagem-col" style="animation-delay:0.42s">
-            <div class="massagem-col__header massa-sex">
-              <span class="massagem-col__abbr">6.ª</span>
-              <span class="massagem-col__dia">10/Jul</span>
-            </div>
-            <div class="massagem-col__slots">
-            <a class="massagem-h" href="https://wa.me/351966201175?text=Ol%C3%A1%21%20Quero%20marcar%20massagem%20no%20dia%2010%20de%20Julho%20%28Sexta-feira%29%20%C3%A0s%2018%3A00." target="_blank" rel="noopener noreferrer" aria-label="Marcar massagem Sexta-feira 10/Jul 18:00">18:00</a>
-            <a class="massagem-h massagem-h--ultimo" href="https://wa.me/351966201175?text=Ol%C3%A1%21%20Quero%20marcar%20massagem%20no%20dia%2010%20de%20Julho%20%28Sexta-feira%29%20%C3%A0s%2019%3A00." target="_blank" rel="noopener noreferrer" aria-label="Marcar massagem Sexta-feira 10/Jul 19:00">19:00</a>
-            </div>
-          </div>
-          <div class="massagem-col" style="animation-delay:0.00s">
-            <div class="massagem-col__header massa-sab">
-              <span class="massagem-col__abbr">Sáb</span>
-              <span class="massagem-col__dia">11/Jul</span>
-            </div>
-            <div class="massagem-col__slots">
-            <a class="massagem-h" href="https://wa.me/351966201175?text=Ol%C3%A1%21%20Quero%20marcar%20massagem%20no%20dia%2011%20de%20Julho%20%28S%C3%A1bado%29%20%C3%A0s%2014%3A00." target="_blank" rel="noopener noreferrer" aria-label="Marcar massagem Sábado 11/Jul 14:00">14:00</a>
-            <a class="massagem-h" href="https://wa.me/351966201175?text=Ol%C3%A1%21%20Quero%20marcar%20massagem%20no%20dia%2011%20de%20Julho%20%28S%C3%A1bado%29%20%C3%A0s%2015%3A00." target="_blank" rel="noopener noreferrer" aria-label="Marcar massagem Sábado 11/Jul 15:00">15:00</a>
-            <a class="massagem-h" href="https://wa.me/351966201175?text=Ol%C3%A1%21%20Quero%20marcar%20massagem%20no%20dia%2011%20de%20Julho%20%28S%C3%A1bado%29%20%C3%A0s%2016%3A00." target="_blank" rel="noopener noreferrer" aria-label="Marcar massagem Sábado 11/Jul 16:00">16:00</a>
-            <a class="massagem-h" href="https://wa.me/351966201175?text=Ol%C3%A1%21%20Quero%20marcar%20massagem%20no%20dia%2011%20de%20Julho%20%28S%C3%A1bado%29%20%C3%A0s%2017%3A00." target="_blank" rel="noopener noreferrer" aria-label="Marcar massagem Sábado 11/Jul 17:00">17:00</a>
-            <a class="massagem-h massagem-h--ultimo" href="https://wa.me/351966201175?text=Ol%C3%A1%21%20Quero%20marcar%20massagem%20no%20dia%2011%20de%20Julho%20%28S%C3%A1bado%29%20%C3%A0s%2018%3A00." target="_blank" rel="noopener noreferrer" aria-label="Marcar massagem Sábado 11/Jul 18:00">18:00</a>
-            </div>
-          </div>
-          <div class="massagem-col" style="animation-delay:0.07s">
-            <div class="massagem-col__header massa-qua">
-              <span class="massagem-col__abbr">4.ª</span>
-              <span class="massagem-col__dia">15/Jul</span>
-            </div>
-            <div class="massagem-col__slots">
-            <a class="massagem-h" href="https://wa.me/351966201175?text=Ol%C3%A1%21%20Quero%20marcar%20massagem%20no%20dia%2015%20de%20Julho%20%28Quarta-feira%29%20%C3%A0s%2018%3A00." target="_blank" rel="noopener noreferrer" aria-label="Marcar massagem Quarta-feira 15/Jul 18:00">18:00</a>
-            <a class="massagem-h massagem-h--ultimo" href="https://wa.me/351966201175?text=Ol%C3%A1%21%20Quero%20marcar%20massagem%20no%20dia%2015%20de%20Julho%20%28Quarta-feira%29%20%C3%A0s%2019%3A00." target="_blank" rel="noopener noreferrer" aria-label="Marcar massagem Quarta-feira 15/Jul 19:00">19:00</a>
-            </div>
-          </div>
-          <div class="massagem-col" style="animation-delay:0.14s">
-            <div class="massagem-col__header massa-qui">
-              <span class="massagem-col__abbr">5.ª</span>
-              <span class="massagem-col__dia">16/Jul</span>
-            </div>
-            <div class="massagem-col__slots">
-            <a class="massagem-h" href="https://wa.me/351966201175?text=Ol%C3%A1%21%20Quero%20marcar%20massagem%20no%20dia%2016%20de%20Julho%20%28Quinta-feira%29%20%C3%A0s%2018%3A00." target="_blank" rel="noopener noreferrer" aria-label="Marcar massagem Quinta-feira 16/Jul 18:00">18:00</a>
-            <a class="massagem-h massagem-h--ultimo" href="https://wa.me/351966201175?text=Ol%C3%A1%21%20Quero%20marcar%20massagem%20no%20dia%2016%20de%20Julho%20%28Quinta-feira%29%20%C3%A0s%2019%3A00." target="_blank" rel="noopener noreferrer" aria-label="Marcar massagem Quinta-feira 16/Jul 19:00">19:00</a>
-            </div>
-          </div>
-          <div class="massagem-col" style="animation-delay:0.21s">
-            <div class="massagem-col__header massa-sex">
-              <span class="massagem-col__abbr">6.ª</span>
-              <span class="massagem-col__dia">17/Jul</span>
-            </div>
-            <div class="massagem-col__slots">
-            <a class="massagem-h" href="https://wa.me/351966201175?text=Ol%C3%A1%21%20Quero%20marcar%20massagem%20no%20dia%2017%20de%20Julho%20%28Sexta-feira%29%20%C3%A0s%2018%3A00." target="_blank" rel="noopener noreferrer" aria-label="Marcar massagem Sexta-feira 17/Jul 18:00">18:00</a>
-            <a class="massagem-h massagem-h--ultimo" href="https://wa.me/351966201175?text=Ol%C3%A1%21%20Quero%20marcar%20massagem%20no%20dia%2017%20de%20Julho%20%28Sexta-feira%29%20%C3%A0s%2019%3A00." target="_blank" rel="noopener noreferrer" aria-label="Marcar massagem Sexta-feira 17/Jul 19:00">19:00</a>
-            </div>
-          </div>
-          <div class="massagem-col" style="animation-delay:0.28s">
-            <div class="massagem-col__header massa-sab">
-              <span class="massagem-col__abbr">Sáb</span>
-              <span class="massagem-col__dia">18/Jul</span>
-            </div>
-            <div class="massagem-col__slots">
-            <a class="massagem-h" href="https://wa.me/351966201175?text=Ol%C3%A1%21%20Quero%20marcar%20massagem%20no%20dia%2018%20de%20Julho%20%28S%C3%A1bado%29%20%C3%A0s%2014%3A00." target="_blank" rel="noopener noreferrer" aria-label="Marcar massagem Sábado 18/Jul 14:00">14:00</a>
-            <a class="massagem-h" href="https://wa.me/351966201175?text=Ol%C3%A1%21%20Quero%20marcar%20massagem%20no%20dia%2018%20de%20Julho%20%28S%C3%A1bado%29%20%C3%A0s%2015%3A00." target="_blank" rel="noopener noreferrer" aria-label="Marcar massagem Sábado 18/Jul 15:00">15:00</a>
-            <a class="massagem-h" href="https://wa.me/351966201175?text=Ol%C3%A1%21%20Quero%20marcar%20massagem%20no%20dia%2018%20de%20Julho%20%28S%C3%A1bado%29%20%C3%A0s%2016%3A00." target="_blank" rel="noopener noreferrer" aria-label="Marcar massagem Sábado 18/Jul 16:00">16:00</a>
-            <a class="massagem-h" href="https://wa.me/351966201175?text=Ol%C3%A1%21%20Quero%20marcar%20massagem%20no%20dia%2018%20de%20Julho%20%28S%C3%A1bado%29%20%C3%A0s%2017%3A00." target="_blank" rel="noopener noreferrer" aria-label="Marcar massagem Sábado 18/Jul 17:00">17:00</a>
-            <a class="massagem-h massagem-h--ultimo" href="https://wa.me/351966201175?text=Ol%C3%A1%21%20Quero%20marcar%20massagem%20no%20dia%2018%20de%20Julho%20%28S%C3%A1bado%29%20%C3%A0s%2018%3A00." target="_blank" rel="noopener noreferrer" aria-label="Marcar massagem Sábado 18/Jul 18:00">18:00</a>
-            </div>
-          </div>
-          <div class="massagem-col" style="animation-delay:0.35s">
-            <div class="massagem-col__header massa-qua">
-              <span class="massagem-col__abbr">4.ª</span>
-              <span class="massagem-col__dia">22/Jul</span>
-            </div>
-            <div class="massagem-col__slots">
-            <a class="massagem-h" href="https://wa.me/351966201175?text=Ol%C3%A1%21%20Quero%20marcar%20massagem%20no%20dia%2022%20de%20Julho%20%28Quarta-feira%29%20%C3%A0s%2018%3A00." target="_blank" rel="noopener noreferrer" aria-label="Marcar massagem Quarta-feira 22/Jul 18:00">18:00</a>
-            <a class="massagem-h massagem-h--ultimo" href="https://wa.me/351966201175?text=Ol%C3%A1%21%20Quero%20marcar%20massagem%20no%20dia%2022%20de%20Julho%20%28Quarta-feira%29%20%C3%A0s%2019%3A00." target="_blank" rel="noopener noreferrer" aria-label="Marcar massagem Quarta-feira 22/Jul 19:00">19:00</a>
-            </div>
-          </div>
-          <div class="massagem-col" style="animation-delay:0.42s">
-            <div class="massagem-col__header massa-qui">
-              <span class="massagem-col__abbr">5.ª</span>
-              <span class="massagem-col__dia">23/Jul</span>
-            </div>
-            <div class="massagem-col__slots">
-            <a class="massagem-h" href="https://wa.me/351966201175?text=Ol%C3%A1%21%20Quero%20marcar%20massagem%20no%20dia%2023%20de%20Julho%20%28Quinta-feira%29%20%C3%A0s%2018%3A00." target="_blank" rel="noopener noreferrer" aria-label="Marcar massagem Quinta-feira 23/Jul 18:00">18:00</a>
-            <a class="massagem-h massagem-h--ultimo" href="https://wa.me/351966201175?text=Ol%C3%A1%21%20Quero%20marcar%20massagem%20no%20dia%2023%20de%20Julho%20%28Quinta-feira%29%20%C3%A0s%2019%3A00." target="_blank" rel="noopener noreferrer" aria-label="Marcar massagem Quinta-feira 23/Jul 19:00">19:00</a>
-            </div>
-          </div>
-          <div class="massagem-col" style="animation-delay:0.00s">
-            <div class="massagem-col__header massa-sex">
-              <span class="massagem-col__abbr">6.ª</span>
-              <span class="massagem-col__dia">24/Jul</span>
-            </div>
-            <div class="massagem-col__slots">
-            <a class="massagem-h" href="https://wa.me/351966201175?text=Ol%C3%A1%21%20Quero%20marcar%20massagem%20no%20dia%2024%20de%20Julho%20%28Sexta-feira%29%20%C3%A0s%2018%3A00." target="_blank" rel="noopener noreferrer" aria-label="Marcar massagem Sexta-feira 24/Jul 18:00">18:00</a>
-            <a class="massagem-h massagem-h--ultimo" href="https://wa.me/351966201175?text=Ol%C3%A1%21%20Quero%20marcar%20massagem%20no%20dia%2024%20de%20Julho%20%28Sexta-feira%29%20%C3%A0s%2019%3A00." target="_blank" rel="noopener noreferrer" aria-label="Marcar massagem Sexta-feira 24/Jul 19:00">19:00</a>
-            </div>
-          </div>
-          <div class="massagem-col" style="animation-delay:0.07s">
-            <div class="massagem-col__header massa-sab">
-              <span class="massagem-col__abbr">Sáb</span>
-              <span class="massagem-col__dia">25/Jul</span>
-            </div>
-            <div class="massagem-col__slots">
-            <a class="massagem-h" href="https://wa.me/351966201175?text=Ol%C3%A1%21%20Quero%20marcar%20massagem%20no%20dia%2025%20de%20Julho%20%28S%C3%A1bado%29%20%C3%A0s%2014%3A00." target="_blank" rel="noopener noreferrer" aria-label="Marcar massagem Sábado 25/Jul 14:00">14:00</a>
-            <a class="massagem-h" href="https://wa.me/351966201175?text=Ol%C3%A1%21%20Quero%20marcar%20massagem%20no%20dia%2025%20de%20Julho%20%28S%C3%A1bado%29%20%C3%A0s%2015%3A00." target="_blank" rel="noopener noreferrer" aria-label="Marcar massagem Sábado 25/Jul 15:00">15:00</a>
-            <a class="massagem-h" href="https://wa.me/351966201175?text=Ol%C3%A1%21%20Quero%20marcar%20massagem%20no%20dia%2025%20de%20Julho%20%28S%C3%A1bado%29%20%C3%A0s%2016%3A00." target="_blank" rel="noopener noreferrer" aria-label="Marcar massagem Sábado 25/Jul 16:00">16:00</a>
-            <a class="massagem-h" href="https://wa.me/351966201175?text=Ol%C3%A1%21%20Quero%20marcar%20massagem%20no%20dia%2025%20de%20Julho%20%28S%C3%A1bado%29%20%C3%A0s%2017%3A00." target="_blank" rel="noopener noreferrer" aria-label="Marcar massagem Sábado 25/Jul 17:00">17:00</a>
-            <a class="massagem-h massagem-h--ultimo" href="https://wa.me/351966201175?text=Ol%C3%A1%21%20Quero%20marcar%20massagem%20no%20dia%2025%20de%20Julho%20%28S%C3%A1bado%29%20%C3%A0s%2018%3A00." target="_blank" rel="noopener noreferrer" aria-label="Marcar massagem Sábado 25/Jul 18:00">18:00</a>
-            </div>
-          </div>
-          <div class="massagem-col" style="animation-delay:0.14s">
-            <div class="massagem-col__header massa-qua">
-              <span class="massagem-col__abbr">4.ª</span>
-              <span class="massagem-col__dia">29/Jul</span>
-            </div>
-            <div class="massagem-col__slots">
-            <a class="massagem-h" href="https://wa.me/351966201175?text=Ol%C3%A1%21%20Quero%20marcar%20massagem%20no%20dia%2029%20de%20Julho%20%28Quarta-feira%29%20%C3%A0s%2018%3A00." target="_blank" rel="noopener noreferrer" aria-label="Marcar massagem Quarta-feira 29/Jul 18:00">18:00</a>
-            <a class="massagem-h massagem-h--ultimo" href="https://wa.me/351966201175?text=Ol%C3%A1%21%20Quero%20marcar%20massagem%20no%20dia%2029%20de%20Julho%20%28Quarta-feira%29%20%C3%A0s%2019%3A00." target="_blank" rel="noopener noreferrer" aria-label="Marcar massagem Quarta-feira 29/Jul 19:00">19:00</a>
-            </div>
-          </div>
-          <div class="massagem-col" style="animation-delay:0.21s">
-            <div class="massagem-col__header massa-qui">
-              <span class="massagem-col__abbr">5.ª</span>
-              <span class="massagem-col__dia">30/Jul</span>
-            </div>
-            <div class="massagem-col__slots">
-            <a class="massagem-h" href="https://wa.me/351966201175?text=Ol%C3%A1%21%20Quero%20marcar%20massagem%20no%20dia%2030%20de%20Julho%20%28Quinta-feira%29%20%C3%A0s%2018%3A00." target="_blank" rel="noopener noreferrer" aria-label="Marcar massagem Quinta-feira 30/Jul 18:00">18:00</a>
-            <a class="massagem-h massagem-h--ultimo" href="https://wa.me/351966201175?text=Ol%C3%A1%21%20Quero%20marcar%20massagem%20no%20dia%2030%20de%20Julho%20%28Quinta-feira%29%20%C3%A0s%2019%3A00." target="_blank" rel="noopener noreferrer" aria-label="Marcar massagem Quinta-feira 30/Jul 19:00">19:00</a>
-            </div>
-          </div>
-          <div class="massagem-col" style="animation-delay:0.28s">
-            <div class="massagem-col__header massa-sex">
-              <span class="massagem-col__abbr">6.ª</span>
-              <span class="massagem-col__dia">31/Jul</span>
-            </div>
-            <div class="massagem-col__slots">
-            <a class="massagem-h" href="https://wa.me/351966201175?text=Ol%C3%A1%21%20Quero%20marcar%20massagem%20no%20dia%2031%20de%20Julho%20%28Sexta-feira%29%20%C3%A0s%2018%3A00." target="_blank" rel="noopener noreferrer" aria-label="Marcar massagem Sexta-feira 31/Jul 18:00">18:00</a>
-            <a class="massagem-h massagem-h--ultimo" href="https://wa.me/351966201175?text=Ol%C3%A1%21%20Quero%20marcar%20massagem%20no%20dia%2031%20de%20Julho%20%28Sexta-feira%29%20%C3%A0s%2019%3A00." target="_blank" rel="noopener noreferrer" aria-label="Marcar massagem Sexta-feira 31/Jul 19:00">19:00</a>
-            </div>
-          </div>
-          </div>
-        </div>
-
-        <p class="text-center" class="u-txt-nota">
+<!-- <p class="text-center u-txt-nota">
           <i class="bi bi-arrow-left-right me-1" aria-hidden="true"></i>
           Desliza para ver todos os dias · Clica no horário para marcar via WhatsApp
-        </p>
+        </p> -->
 
       </div>
     </section>
