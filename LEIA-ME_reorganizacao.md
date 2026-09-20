@@ -212,3 +212,21 @@ trabalha por marcação directa. A secção mostra agora apenas
 "Disponibilidade por marcação" com CTA para o WhatsApp — sem indicar horas.
 Todo o conteúdo comentado fica pronto a reactivar assim que o horário fixo
 voltar.
+
+---
+
+# Actualização — 20 de Setembro de 2026
+
+## Foto real da Célia Laranjeira
+Substituído o avatar provisório (iniciais "CL") pela fotografia enviada.
+Recorte quadrado (900×900) centrado no rosto, com o mesmo tratamento e
+enquadramento dos restantes retratos da equipa. Removida a classe
+`is-placeholder` do `<img>` em `pages/equipa.html`.
+
+## Biografia actualizada
+Reescrita com o texto fornecido, mantendo o registo dos restantes cartões:
+"Instrutora de Pilates com formação profissional certificada pela DGERT e
+reconhecimento do IPDJ. Complementou o seu percurso com formação em
+Exercícios Corretivos. Trabalha o controlo do movimento, a correção postural
+e o fortalecimento profundo, ajustando cada exercício ao corpo de quem o
+executa."
