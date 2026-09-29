@@ -1174,38 +1174,11 @@ h1, h2, h3, h4, h5, h6 {
 .test-service { font-size: .75rem; color: var(--txt-muted); display: block; margin-top: .1rem; }
 
 /* Contadores */
-.counters-wrap {
-  background:    var(--salvia-texto);
-  border-radius: var(--r-xl);
-  padding:       3rem 2rem;
-  margin-top:    3rem;
-}
-.counters-label {
-  font-family:    var(--f-h);
-  font-size:      .7rem;
-  font-weight:    500;
-  letter-spacing: .22em;
-  text-transform: uppercase;
-  color:          rgba(255,255,255,.70);
-  margin-bottom:  2rem;
-  text-align:     center;
-}
 .counter-num {
-  display:     block;
-  font-family: var(--f-h);
-  font-size:   clamp(2.2rem, 5vw, 3.2rem);
-  font-weight: 700;
-  color:       var(--txt-inv);
-  line-height: 1;
-  margin-bottom: .35rem;
+  /* Classe usada apenas como seletor pelo JS (assets/js/site.js, módulo
+     05 "Contadores animados"). O estilo visual vem sempre de .stat-num,
+     a única classe com que .counter-num é combinada. */
 }
-.counter-lbl {
-  font-family: var(--f-h);
-  font-size:   .75rem;
-  color:       rgba(255,255,255,.72);
-}
-
-@media (max-width: 575px) { .counters-wrap { padding: 2rem 1rem; } }
 
 
 /* ────────────────────────────────────────────────────────────────
@@ -1501,43 +1474,11 @@ h1, h2, h3, h4, h5, h6 {
 
 /* ────────────────────────────────────────────────────────────────
    17. GALERIA + LIGHTBOX
+   NOTA: .galeria-grid / .galeria-item vivem exclusivamente em
+   galeria.css (carregado depois deste ficheiro em galeria.html,
+   a única página que os usa) — removidos daqui para eliminar a
+   duplicação/conflito de regras entre os dois ficheiros.
    ──────────────────────────────────────────────────────────────── */
-.galeria-grid {
-  columns:    3 240px;
-  gap:        1rem;
-}
-.galeria-item {
-  break-inside:  avoid;
-  margin-bottom: 1rem;
-  position:      relative;
-  overflow:      hidden;
-  border-radius: var(--r-lg);
-  cursor:        pointer;
-}
-.galeria-item img {
-  width:      100%;
-  display:    block;
-  transition: transform .45s ease;
-}
-.galeria-item:hover img { transform: scale(1.05); }
-.galeria-item__overlay {
-  position:        absolute;
-  inset:           0;
-  background:      rgba(74, 64, 58, 0);
-  display:         flex;
-  align-items:     center;
-  justify-content: center;
-  transition:      background var(--tr);
-}
-.galeria-item:hover .galeria-item__overlay { background: rgba(74, 64, 58, .40); }
-.galeria-item__overlay i {
-  color:      var(--txt-inv);
-  font-size:  2rem;
-  opacity:    0;
-  transform:  scale(.7);
-  transition: all var(--tr);
-}
-.galeria-item:hover .galeria-item__overlay i { opacity: 1; transform: scale(1); }
 
 /* Lightbox */
 .lightbox {
@@ -1590,10 +1531,6 @@ h1, h2, h3, h4, h5, h6 {
   color:          rgba(255,255,255,.65);
   letter-spacing: .08em;
 }
-
-@media (max-width: 575px) { .galeria-grid { columns: 1; } }
-@media (max-width: 767px) { .galeria-grid { columns: 2 150px; } }
-
 
 /* ────────────────────────────────────────────────────────────────
    18. EQUIPA — Cards de membros

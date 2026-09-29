@@ -230,3 +230,91 @@ reconhecimento do IPDJ. Complementou o seu percurso com formação em
 Exercícios Corretivos. Trabalha o controlo do movimento, a correção postural
 e o fortalecimento profundo, ajustando cada exercício ao corpo de quem o
 executa."
+
+---
+
+# Actualização — 22 de Setembro de 2026 (Auditoria Equipa 360°)
+
+## Correcções críticas de marcação
+1. **`<h2>…</h3>` no rodapé (24 ocorrências, 8 páginas):** `contactos.html`,
+   `cookies.html`, `equipa.html`, `galeria.html`, `horarios.html`,
+   `nosso-espaco.html`, `privacidade.html`, `termos.html` — os três títulos
+   do rodapé ("Páginas", "Horário", "Contactos") abriam em `<h2>` e fechavam
+   em `</h3>`. `index.html`, `reservas.html` e `servicos.html` já estavam
+   correctos. Uniformizado para `</h2>` em todo o site.
+2. **`</a>` duplicado** em `servicos.html` (painel PT Individual) — removido
+   o fecho órfão.
+3. **Atributos HTML colados sem espaço** em `index.html` (CTA "Treino
+   Autónomo") — corrigido `..."target="_blank"rel="..."` para a forma
+   válida com espaços.
+4. **10 atributos `class` duplicados** — reincidência do mesmo bug já
+   corrigido numa auditoria anterior (ver acima, "11 atributos class
+   duplicados"). Ocorreu em `index.html` (6×) e `contactos.html` (4×),
+   introduzido em edições posteriores a essa correcção. Fundidos num único
+   atributo `class`.
+5. **24 tags `</i>` órfãs** em `index.html` — o padrão
+   `<!--<i ...>-->`</i>` deixava o fecho fora do comentário. Movido para
+   dentro do comentário nas 24 ocorrências (secção de serviços).
+6. **`&` não escapado** no `<title>` de `nosso-espaco.html` — corrigido
+   para `&amp;`.
+
+## Performance
+7. **CSS duplicado e em conflito:** `.galeria-grid` / `.galeria-item` e
+   variantes estavam definidos tanto em `style.css` (§17) como em
+   `galeria.css`, com breakpoints diferentes (575/767px vs 480/768px). Como
+   `galeria.css` carrega depois, a versão de `style.css` nunca era aplicada
+   — código morto. Removida de `style.css`; `galeria.css` passa a ser a
+   única fonte (mantém o comportamento visual actual).
+8. **CLS (Cumulative Layout Shift):** `width`/`height` em falta no logótipo
+   do navbar e do rodapé em 8 subpáginas (`nosso-espaco`, `contactos`,
+   `privacidade`, `horarios`, `equipa`, `galeria`, `cookies`, `termos`) —
+   adicionados `width="80" height="80"` (navbar) e `width="52" height="52"`
+   (rodapé), replicando o que já existia em `index.html`.
+9. **Fallback externo para Unsplash** em `galeria.html` (13×) e
+   `nosso-espaco.html` (1×) — mesmo padrão de risco já identificado e
+   corrigido no hero da homepage ("bug do hero com fundo duplo"), mas que
+   persistia nestas duas páginas. Substituído pelo padrão local já usado
+   no resto do site: `onerror="this.onerror=null;this.style.display='none'"`.
+
+## Verificado e confirmado SEM problema (falsos positivos descartados)
+- **Sem XSS:** os 3 usos de `innerHTML` em `site.js` inserem apenas
+  strings estáticas; o único valor dinâmico (`waURL`) passa por
+  `encodeURIComponent()` antes de ser interpolado.
+- **Sem `target="_blank"` inseguro:** todos os 15 links que abrem nova
+  aba têm `rel="noopener noreferrer"`.
+- **Sem `id` duplicado real:** o `id="main-content"` "duplicado" detectado
+  inicialmente em `reservas.html` era apenas texto dentro de um comentário.
+- **Sintaxe JS/CSS válida:** `node --check` sem erros; chavetas `{}`
+  balanceadas em `site.js` e nos 7 ficheiros CSS.
+
+## Pendente — decisão de produto (não alterado)
+**`pages/nosso-espaco.html` continua órfã:** nenhuma página do site liga
+para ela (nem menu, nem rodapé, nem `sitemap.xml`), e o conteúdo é
+redundante com `galeria.html`. Os bugs de marcação foram corrigidos, mas
+falta decidir: (a) ligar a página em algum ponto do site se tiver função
+própria, ou (b) eliminá-la e configurar um redirecionamento 301 para
+`galeria.html` no alojamento.
+
+---
+
+# Actualização — 22 de Setembro de 2026 (continuação — contadores animados)
+
+1. **Fallback sem JavaScript nos contadores:** os `<span class="counter-num">`
+   mostravam `0` como conteúdo estático de partida (a animação em `site.js`
+   conta de 0 até `data-target` ao entrar no ecrã). Sem JS — ou para
+   motores de busca que não o executam — a página afirmava "0 Membros
+   ativos", "0% Satisfação". Corrigido: o HTML estático mostra agora o
+   valor final; a animação visual mantém-se igual.
+2. **Bloco "Em números" removido** (secção Resultados/Testemunhos) —
+   mostrava "847 Aulas em 2024", um dado de há 2 anos, duplicado com as
+   estatísticas já existentes na secção "Sobre". Removido por decisão
+   do cliente, em vez de inventar um número actualizado.
+3. **Bug de contraste descoberto como efeito colateral do ponto 2:**
+   `.counter-num` definia `color:#FFFFFF` e `font-size` maior — regras
+   pensadas apenas para o painel escuro removido no ponto 2. Como a
+   classe também está combinada com `.stat-num` nos cartões claros da
+   secção "Sobre", e vem depois no CSS, o branco ganhava ao verde
+   escuro do `.stat-num`: os números "100" e "98%" ficavam brancos
+   sobre fundo `#F5F2EE` (quase branco) — praticamente invisíveis.
+   `.counter-num` foi reduzida a uma classe puramente de selecção para
+   o JS, sem estilo próprio; todo o visual passa a vir de `.stat-num`.

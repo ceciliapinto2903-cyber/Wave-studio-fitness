@@ -167,13 +167,15 @@
 
 /* ── Calendário laser ── */
           .laser-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
             gap: 1rem;
             margin-bottom: 2rem;
           }
-          @media (max-width: 767px) { .laser-grid { grid-template-columns: repeat(3, 1fr); } }
-          @media (max-width: 479px) { .laser-grid { grid-template-columns: repeat(2, 1fr); } }
+          .laser-grid .laser-mes { flex: 0 0 calc(25% - .75rem); }
+          @media (max-width: 767px) { .laser-grid .laser-mes { flex-basis: calc(33.333% - .67rem); } }
+          @media (max-width: 479px) { .laser-grid .laser-mes { flex-basis: calc(50% - .5rem); } }
 
           .laser-mes {
             position: relative;
@@ -203,6 +205,14 @@
             letter-spacing: .08em;
             text-transform: uppercase;
             color: var(--txt-h);
+          }
+          .laser-mes__dia {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--txt-h);
+            letter-spacing: .03em;
+            margin-top: -.15rem;
           }
           .laser-mes__vagas {
             font-size: 2rem;
